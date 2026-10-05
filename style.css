@@ -1,0 +1,4139 @@
+/* ==================================================
+   BASIC RESET
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background: #74c5d4;
+    color: #293b38;
+
+    line-height: 1.6;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==================================================
+   NAVIGATION
+   ================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    padding: 18px 40px;
+
+    background: rgba(235, 245, 242, 0.9);
+
+    border-bottom: 1px solid rgba(60, 90, 80, 0.12);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.logo {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+
+.site-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: #59736b;
+}
+
+
+.navbar nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.navbar nav a {
+    font-size: 0.85rem;
+
+    color: #60746e;
+
+    transition: color 0.2s ease;
+}
+
+
+.navbar nav a:hover {
+    color: #293b38;
+}
+
+
+/* ==================================================
+   LANGUAGE SWITCHER
+   ================================================== */
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-left: 3px;
+
+    padding: 4px 7px;
+
+    border: 1px solid rgba(90, 120, 110, 0.2);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.45);
+}
+
+
+.language-button {
+    padding: 3px 5px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: #6d817b;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.language-button:hover {
+    color: #293b38;
+}
+
+
+.language-button.active {
+    background: #ffffff;
+
+    color: #405a52;
+
+    box-shadow:
+        0 2px 5px rgba(60, 80, 70, 0.08);
+}
+
+
+.language-divider {
+    color: #a1b1ab;
+
+    font-size: 0.7rem;
+
+    user-select: none;
+}
+
+
+/* ==================================================
+   GENERAL TEXT
+   ================================================== */
+
+.eyebrow {
+    margin-bottom: 10px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    color: #6d8880;
+}
+
+
+.island-intro {
+    position: relative;
+    z-index: 5;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding-top: 75px;
+
+    text-align: center;
+}
+
+
+.island-intro h1 {
+    margin-bottom: 15px;
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+
+    color: #304841;
+}
+
+
+.island-intro p:last-child {
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    color: #607871;
+
+    font-size: 1.05rem;
+}
+
+
+/* ==================================================
+   ISLAND SECTION
+   ================================================== */
+
+.island-section {
+    min-height: calc(100vh - 70px);
+
+    padding-bottom: 80px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.28), transparent 26%),
+        linear-gradient(180deg, #8ed4de 0%, #68c0d2 52%, #57b4c9 100%);
+}
+
+
+/* ==================================================
+   WATER + ILLUSTRATED MAP
+   ================================================== */
+
+.island {
+    position: relative;
+
+    width: min(1280px, 96vw);
+
+    height: auto;
+
+    margin: 12px auto 0;
+
+    overflow: hidden;
+
+    border-radius: 36px;
+
+    background: #5eb9cc;
+
+    box-shadow:
+        0 25px 60px rgba(35, 90, 105, 0.22);
+}
+
+
+.island-map {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* ==================================================
+   HOTSPOT OVERLAY
+   ================================================== */
+
+.land {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transform: none;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+}
+
+
+/* ==================================================
+   MAIN BUILDINGS
+   ================================================== */
+
+.building {
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-radius: 22px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #4a3f36;
+
+    box-shadow: none;
+
+    transition: filter 0.2s ease;
+}
+
+
+.building:hover {
+    filter: drop-shadow(0 10px 16px rgba(40, 60, 55, 0.18));
+}
+
+
+.building:focus-visible {
+    outline: 3px solid rgba(255, 248, 230, 0.9);
+    outline-offset: 6px;
+}
+
+
+.building-plaque {
+    position: relative;
+
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: min(100%, 230px);
+
+    padding: 9px 14px 10px;
+
+    border: 1px solid rgba(126, 101, 73, 0.28);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 249, 235, 0.97),
+            rgba(242, 224, 191, 0.97)
+        );
+
+    box-shadow:
+        0 8px 16px rgba(68, 67, 55, 0.16);
+
+    transition: transform 0.2s ease;
+}
+
+
+.building:hover .building-plaque {
+    transform: translateY(-5px);
+}
+
+
+.plaque-icon {
+    display: block;
+
+    margin-bottom: 2px;
+
+    font-size: 0.95rem;
+
+    line-height: 1;
+}
+
+
+.building-name,
+.sign-title {
+    display: block;
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.07em;
+
+    color: #4b4038;
+}
+
+
+.building-subtitle,
+.sign-subtitle {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 0.66rem;
+
+    line-height: 1.3;
+
+    color: #766d63;
+}
+
+
+/* ==================================================
+   INDIVIDUAL BUILDING HOTSPOTS
+   Positions are percentages of the illustrated map.
+   ================================================== */
+
+.about-house {
+    left: 50.2%;
+    top: 7%;
+
+    width: 18%;
+    height: 32%;
+
+    transform: translateX(-50%);
+
+    background: transparent;
+}
+
+
+.about-house .building-plaque {
+    margin-bottom: 2%;
+}
+
+
+.ai-lab {
+    left: 22.8%;
+    top: 31%;
+
+    width: 22%;
+    height: 34%;
+
+    transform: translateX(-50%);
+
+    background: transparent;
+}
+
+
+.experience-house {
+    left: 72.5%;
+    top: 29%;
+
+    width: 21%;
+    height: 34%;
+
+    transform: translateX(-50%);
+
+    background: transparent;
+}
+
+
+.data-lab,
+.product-studio {
+    display: none;
+}
+
+
+/* ==================================================
+   SIDE PROJECTS
+   ================================================== */
+
+.side-projects {
+    position: absolute;
+
+    z-index: 12;
+
+    left: 49.5%;
+    top: 58%;
+
+    width: 23%;
+    height: 32%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background: transparent;
+}
+
+
+.side-projects-trigger {
+    cursor: pointer;
+}
+
+
+.side-projects-trigger:focus-visible {
+    outline: 3px solid rgba(255, 248, 230, 0.9);
+    outline-offset: 6px;
+    border-radius: 22px;
+}
+
+
+.side-projects::after {
+    display: none;
+}
+
+
+.sign-post {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100%, 230px);
+
+    padding: 9px 14px 10px;
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+
+.side-projects-trigger:hover .building-plaque {
+    transform: translateY(-5px);
+}
+
+
+.side-project-item {
+    display: none;
+}
+
+
+/* ==================================================
+   CENTER SIGN
+   ================================================== */
+
+.island-sign {
+    position: absolute;
+
+    left: 50.2%;
+    top: 46.5%;
+
+    z-index: 5;
+
+    transform: translate(-50%, -50%);
+
+    padding: 10px 22px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 249, 235, 0.95),
+            rgba(236, 220, 190, 0.95)
+        );
+
+    border: 1px solid rgba(126, 101, 73, 0.28);
+
+    color: #5c5148;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    box-shadow:
+        0 8px 16px rgba(68, 67, 55, 0.14);
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   CONTACT
+   ================================================== */
+
+.contact-section {
+    padding: 110px 40px;
+
+    background: #edf3ee;
+
+    border-top: 1px solid rgba(60, 90, 80, 0.1);
+}
+
+
+.contact-content {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.contact-content h2 {
+    margin-bottom: 15px;
+
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+
+    color: #304841;
+}
+
+
+.contact-content > p:not(.eyebrow) {
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    color: #687973;
+}
+
+
+.contact-links {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.contact-links a {
+    padding: 10px 18px;
+
+    border: 1px solid #cbd8d0;
+
+    border-radius: 50px;
+
+    background: #f8faf7;
+
+    font-size: 0.85rem;
+
+    color: #536960;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.contact-links a:hover {
+    background: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #edf3ee;
+
+    color: #82918b;
+
+    font-size: 0.75rem;
+}
+
+
+/* ==================================================
+   TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        grid-template-columns: 1fr auto 1fr;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+
+    .island {
+        border-radius: 28px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 16px 18px;
+
+        gap: 12px;
+    }
+
+
+    .logo {
+        flex-shrink: 0;
+
+        font-size: 0.85rem;
+    }
+
+
+    .site-title {
+        display: none;
+    }
+
+
+    .navbar nav {
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        min-width: 0;
+    }
+
+
+    .navbar nav a {
+        font-size: 0.75rem;
+
+        white-space: nowrap;
+    }
+
+
+    .language-switcher {
+        flex-shrink: 0;
+
+        margin-left: 1px;
+
+        padding: 3px 5px;
+
+        gap: 3px;
+    }
+
+
+    .language-button {
+        padding: 3px 4px;
+
+        font-size: 0.68rem;
+    }
+
+
+    .island-intro {
+        padding: 55px 20px 0;
+    }
+
+
+    .island-intro h1 {
+        font-size: 2.8rem;
+    }
+
+
+    .island {
+        width: 96vw;
+
+        margin-top: 18px;
+
+        border-radius: 22px;
+    }
+
+
+    .building-plaque,
+    .sign-post {
+        width: min(100%, 160px);
+
+        padding: 6px 8px 7px;
+    }
+
+
+    .building-name,
+    .sign-title {
+        font-size: 0.58rem;
+    }
+
+
+    .building-subtitle,
+    .sign-subtitle {
+        font-size: 0.52rem;
+    }
+
+
+    .plaque-icon {
+        font-size: 0.75rem;
+    }
+
+
+    .island-sign {
+        padding: 6px 10px;
+
+        font-size: 0.52rem;
+    }
+
+
+    .contact-section {
+        padding: 80px 20px;
+    }
+
+}
+/* ==================================================
+   AI LAB MODAL / PROJECT PREVIEW
+   ================================================== */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.ai-modal,
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.ai-modal.is-open,
+.project-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.ai-modal-backdrop,
+.project-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 57, 52, 0.38);
+    backdrop-filter: blur(5px);
+}
+
+.ai-modal-panel,
+.project-modal-panel {
+    position: relative;
+    z-index: 2;
+    width: min(760px, 100%);
+    max-height: min(760px, 88vh);
+    overflow-y: auto;
+    padding: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 28px;
+    background:
+        radial-gradient(
+            circle at 15% 0%,
+            rgba(255, 255, 255, 0.75),
+            transparent 32%
+        ),
+        #eef3e9;
+    box-shadow:
+        0 30px 70px rgba(45, 70, 60, 0.28),
+        0 8px 20px rgba(45, 70, 60, 0.12);
+    transform: translateY(18px) scale(0.98);
+    transition: transform 0.25s ease;
+}
+
+.ai-modal.is-open .ai-modal-panel,
+.project-modal.is-open .project-modal-panel {
+    transform: translateY(0) scale(1);
+}
+
+.ai-modal-close,
+.project-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.72);
+    color: #536960;
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.ai-modal-close:hover,
+.project-modal-close:hover {
+    background: #ffffff;
+    transform: rotate(4deg);
+}
+
+.ai-modal-header,
+.project-modal-header {
+    padding-right: 35px;
+    margin-bottom: 28px;
+}
+
+.ai-modal-eyebrow,
+.project-modal-eyebrow {
+    margin-bottom: 7px;
+    color: #7a7189;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.ai-modal-header h2,
+.project-modal-header h2 {
+    margin-bottom: 9px;
+    color: #304841;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
+
+.ai-modal-header > p:last-child {
+    color: #687973;
+    font-size: 0.95rem;
+}
+
+.ai-project-list {
+    display: grid;
+    gap: 11px;
+}
+
+.ai-project-card {
+    position: relative;
+    width: 100%;
+    min-height: 86px;
+    padding: 16px 48px 16px 17px;
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: center;
+    gap: 13px;
+    border: 1px solid rgba(85, 108, 96, 0.12);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.62);
+    color: #344741;
+    text-align: left;
+}
+
+.ai-project-card-clickable {
+    font: inherit;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ai-project-card-clickable:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 22px rgba(65, 85, 75, 0.12);
+}
+
+.ai-project-number {
+    align-self: start;
+    padding-top: 2px;
+    color: #9aabb0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.ai-project-content {
+    min-width: 0;
+}
+
+.ai-project-title,
+.ai-project-tech,
+.ai-project-result {
+    display: block;
+}
+
+.ai-project-title {
+    margin-bottom: 4px;
+    color: #3b514a;
+    font-size: 0.93rem;
+    font-weight: 750;
+    line-height: 1.35;
+}
+
+.ai-project-tech {
+    color: #71817b;
+    font-size: 0.74rem;
+    line-height: 1.45;
+}
+
+.ai-project-result {
+    margin-top: 3px;
+    color: #786b85;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.ai-project-arrow {
+    color: #7c8f87;
+    font-size: 1.1rem;
+}
+
+.project-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 22px;
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #63766e;
+    font: inherit;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.project-back-button:hover {
+    background: rgba(255, 255, 255, 0.85);
+    transform: translateX(-2px);
+}
+
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.project-detail-block {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid rgba(85, 108, 96, 0.11);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.project-detail-block h3 {
+    margin-bottom: 7px;
+    color: #77877f;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.project-detail-block p {
+    color: #3e514b;
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+.project-detail-highlight {
+    background: rgba(228, 214, 237, 0.42);
+    border-color: rgba(142, 119, 158, 0.16);
+}
+
+.project-detail-highlight p {
+    color: #665774;
+    font-weight: 750;
+}
+
+@media (max-width: 700px) {
+
+    .ai-modal,
+    .project-modal {
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    .ai-modal-panel,
+    .project-modal-panel {
+        width: 100%;
+        max-height: calc(100vh - 32px);
+        padding: 32px 18px 22px;
+        border-radius: 22px;
+    }
+
+    .ai-modal-close,
+    .project-modal-close {
+        top: 12px;
+        right: 12px;
+    }
+
+    .ai-modal-header,
+    .project-modal-header {
+        padding-right: 35px;
+        margin-bottom: 21px;
+    }
+
+    .ai-modal-header h2,
+    .project-modal-header h2 {
+        font-size: 2rem;
+    }
+
+    .ai-project-card {
+        min-height: 80px;
+        padding: 14px 15px;
+        grid-template-columns: 28px minmax(0, 1fr) auto;
+        gap: 9px;
+    }
+
+    .ai-project-title {
+        font-size: 0.84rem;
+    }
+
+    .ai-project-tech,
+    .ai-project-result {
+        font-size: 0.68rem;
+    }
+
+    .project-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-detail-block {
+        padding: 15px;
+    }
+
+}
+
+
+/* ==================================================
+   UBER CASE STUDY
+   ================================================== */
+
+.project-preview-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.case-study-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 17px;
+    border: 1px solid rgba(95, 119, 107, 0.18);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.78);
+    color: #536960;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 7px 16px rgba(65, 85, 75, 0.08);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.case-study-button:hover {
+    transform: translateY(-2px);
+    background: #ffffff;
+    box-shadow: 0 11px 22px rgba(65, 85, 75, 0.13);
+}
+
+.case-study-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 22px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.case-study-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.case-study-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 57, 52, 0.44);
+    backdrop-filter: blur(7px);
+}
+
+.case-study-panel {
+    position: relative;
+    z-index: 2;
+    width: min(1080px, 100%);
+    max-height: calc(100vh - 44px);
+    overflow-y: auto;
+    padding: 52px 58px 48px;
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 30px;
+    background:
+        radial-gradient(
+            circle at 12% 0%,
+            rgba(255, 255, 255, 0.82),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #f4f7f0 0%,
+            #eef3e9 100%
+        );
+    box-shadow:
+        0 35px 80px rgba(45, 70, 60, 0.3),
+        0 10px 24px rgba(45, 70, 60, 0.13);
+    transform: translateY(18px) scale(0.985);
+    transition: transform 0.25s ease;
+}
+
+.case-study-modal.is-open .case-study-panel {
+    transform: translateY(0) scale(1);
+}
+
+.case-study-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.76);
+    color: #536960;
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.case-study-close:hover {
+    background: #ffffff;
+    transform: rotate(4deg);
+}
+
+.case-study-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 28px;
+    padding: 7px 11px;
+    border: 0;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.54);
+    color: #63766e;
+    font: inherit;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.case-study-back-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(-2px);
+}
+
+.case-study-header {
+    max-width: 820px;
+    margin-bottom: 58px;
+}
+
+.case-study-eyebrow {
+    margin-bottom: 9px;
+    color: #7a7189;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+}
+
+.case-study-header h2 {
+    max-width: 820px;
+    margin-bottom: 15px;
+    color: #304841;
+    font-size: clamp(2.5rem, 6vw, 5.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+}
+
+.case-study-subtitle {
+    color: #687973;
+    font-size: 0.98rem;
+    font-weight: 650;
+}
+
+.case-study-section {
+    padding: 52px 0;
+    border-top: 1px solid rgba(85, 108, 96, 0.12);
+}
+
+.case-study-section-heading {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    align-items: start;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.case-study-section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(228, 214, 237, 0.55);
+    color: #766881;
+    font-size: 0.68rem;
+    font-weight: 800;
+}
+
+.case-study-section-kicker {
+    margin-bottom: 5px;
+    color: #8a9791;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.case-study-section-heading h3 {
+    color: #304841;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
+
+.case-study-overview-copy {
+    max-width: 830px;
+}
+
+.case-study-overview-copy > p {
+    margin-bottom: 17px;
+    color: #4e615a;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.case-study-challenge {
+    margin-top: 26px;
+    padding: 20px 22px;
+    border-left: 3px solid #b99fc8;
+    border-radius: 0 16px 16px 0;
+    background: rgba(255, 255, 255, 0.58);
+}
+
+.case-study-challenge > span {
+    display: block;
+    margin-bottom: 7px;
+    color: #776982;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.case-study-challenge p {
+    color: #43564f;
+    font-size: 0.94rem;
+    line-height: 1.7;
+}
+
+.case-study-workflow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 9px;
+    margin-top: 38px;
+}
+
+.workflow-step {
+    min-width: 0;
+    min-height: 112px;
+    padding: 17px 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(85, 108, 96, 0.11);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 7px 18px rgba(65, 85, 75, 0.05);
+}
+
+.workflow-number {
+    color: #9aabb0;
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.workflow-step strong {
+    color: #40544d;
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+.workflow-step-final {
+    background: rgba(228, 214, 237, 0.42);
+    border-color: rgba(142, 119, 158, 0.16);
+}
+
+.workflow-arrow {
+    color: #94a29b;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.case-study-role-card {
+    max-width: 820px;
+    padding: 28px 30px;
+    border: 1px solid rgba(85, 108, 96, 0.11);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.case-study-role-subtitle {
+    margin-bottom: 18px;
+    color: #665774;
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+
+.case-study-role-card ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.case-study-role-card li {
+    margin-bottom: 11px;
+    padding-left: 5px;
+    color: #4e615a;
+    font-size: 0.94rem;
+    line-height: 1.65;
+}
+
+.case-study-role-card li:last-child {
+    margin-bottom: 0;
+}
+
+.results-card {
+    position: relative;
+    overflow: hidden;
+    padding: 42px 40px 38px;
+    border: 1px solid rgba(142, 119, 158, 0.18);
+    border-radius: 24px;
+    background:
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(255, 255, 255, 0.72),
+            transparent 29%
+        ),
+        rgba(228, 214, 237, 0.48);
+}
+
+.results-label {
+    margin-bottom: 8px;
+    color: #776982;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.results-number {
+    margin-bottom: 8px;
+    color: #304841;
+    font-size: clamp(4.5rem, 12vw, 8rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+}
+
+.results-improvement {
+    margin-bottom: 24px;
+    color: #665774;
+    font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+    font-weight: 800;
+}
+
+.results-improvement span {
+    font-weight: 650;
+}
+
+.results-explanation {
+    max-width: 760px;
+    color: #4e615a;
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+.case-study-notebook {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    margin-top: 20px;
+    padding: 21px 23px;
+    border: 1px solid rgba(85, 108, 96, 0.11);
+    border-radius: 19px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.notebook-label {
+    margin-bottom: 4px;
+    color: #40544d;
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
+.notebook-description {
+    color: #75837d;
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+.notebook-button {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 9px 15px;
+    border: 1px solid rgba(95, 119, 107, 0.18);
+    border-radius: 50px;
+    background: #ffffff;
+    color: #536960;
+    font-size: 0.78rem;
+    font-weight: 750;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.notebook-button:hover {
+    transform: translateY(-2px);
+    background: #fdfefd;
+    box-shadow: 0 8px 18px rgba(65, 85, 75, 0.1);
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.learning-card {
+    padding: 23px;
+    border: 1px solid rgba(85, 108, 96, 0.11);
+    border-radius: 19px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.learning-card-label {
+    margin-bottom: 13px;
+    color: #665774;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.learning-card > p:last-child {
+    color: #4e615a;
+    font-size: 0.86rem;
+    line-height: 1.72;
+}
+
+.case-study-footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+}
+
+@media (max-width: 900px) {
+
+    .case-study-panel {
+        padding-left: 38px;
+        padding-right: 38px;
+    }
+
+    .case-study-workflow {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .workflow-arrow {
+        text-align: center;
+        transform: none;
+    }
+
+    .workflow-step {
+        min-height: 82px;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .case-study-modal {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .case-study-panel {
+        max-height: calc(100vh - 24px);
+        padding: 34px 18px 28px;
+        border-radius: 22px;
+    }
+
+    .case-study-close {
+        top: 11px;
+        right: 11px;
+    }
+
+    .case-study-back-button {
+        margin-bottom: 22px;
+    }
+
+    .case-study-header {
+        margin-bottom: 38px;
+    }
+
+    .case-study-header h2 {
+        font-size: clamp(2.25rem, 12vw, 3.5rem);
+        line-height: 1;
+    }
+
+    .case-study-section {
+        padding: 38px 0;
+    }
+
+    .case-study-section-heading {
+        grid-template-columns: 36px 1fr;
+        gap: 10px;
+        margin-bottom: 22px;
+    }
+
+    .case-study-section-number {
+        width: 34px;
+        height: 34px;
+    }
+
+    .case-study-role-card,
+    .results-card,
+    .learning-card {
+        padding: 20px;
+    }
+
+    .results-number {
+        font-size: clamp(4rem, 20vw, 6rem);
+    }
+
+    .case-study-notebook {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .notebook-button {
+        width: 100%;
+    }
+
+    .case-study-footer .case-study-back-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+/* Project 05 result highlights — scoped to this case study only. */
+.project05-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 26px 0 22px;
+}
+
+.project05-metric-card {
+    min-width: 0;
+    padding: 19px 16px;
+    border: 1px solid rgba(85, 108, 96, 0.11);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.project05-metric-value {
+    margin-bottom: 7px;
+    color: #304841;
+    font-size: clamp(1.65rem, 3.2vw, 2.45rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.project05-metric-label {
+    color: #665774;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    line-height: 1.35;
+}
+
+.project05-metric-detail {
+    margin-top: 6px;
+    color: #75837d;
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+    .project05-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .project05-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================================================
+   EXPERIENCE PAGE — SCOPED STYLES ONLY
+   ================================================== */
+
+body.experience-page-open {
+    overflow: hidden;
+}
+
+.experience-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.experience-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.experience-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 57, 52, 0.38);
+    backdrop-filter: blur(5px);
+}
+
+.experience-modal-panel {
+    position: relative;
+    z-index: 2;
+    width: min(900px, 100%);
+    max-height: min(820px, 90vh);
+    overflow-y: auto;
+    padding: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 28px;
+    background:
+        radial-gradient(
+            circle at 12% 0%,
+            rgba(255, 255, 255, 0.78),
+            transparent 30%
+        ),
+        #eef3e9;
+    box-shadow:
+        0 30px 70px rgba(45, 70, 60, 0.28),
+        0 8px 20px rgba(45, 70, 60, 0.12);
+    transform: translateY(18px) scale(0.98);
+    transition: transform 0.25s ease;
+}
+
+.experience-modal.is-open .experience-modal-panel {
+    transform: translateY(0) scale(1);
+}
+
+.experience-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.72);
+    color: #536960;
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.experience-modal-close:hover {
+    background: #ffffff;
+    transform: rotate(4deg);
+}
+
+.experience-page-header {
+    padding-right: 45px;
+    margin-bottom: 34px;
+}
+
+.experience-page-eyebrow {
+    margin-bottom: 7px;
+    color: #7a7189;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.experience-page-header h2 {
+    margin-bottom: 9px;
+    color: #304841;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+}
+
+.experience-page-header > p:last-child {
+    color: #687973;
+    font-size: 0.95rem;
+}
+
+.experience-timeline {
+    position: relative;
+    display: grid;
+    gap: 18px;
+}
+
+.experience-timeline::before {
+    content: "";
+    position: absolute;
+    top: 26px;
+    bottom: 26px;
+    left: 84px;
+    width: 2px;
+    border-radius: 2px;
+    background: rgba(125, 145, 134, 0.22);
+}
+
+.experience-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 25px;
+    align-items: start;
+}
+
+.experience-card-year {
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+    color: #7a7189;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-align: right;
+}
+
+.experience-card-year::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    right: -31px;
+    width: 11px;
+    height: 11px;
+    border: 3px solid #eef3e9;
+    border-radius: 50%;
+    background: #8c9e91;
+    box-shadow: 0 0 0 1px rgba(105, 126, 114, 0.15);
+}
+
+.experience-card-content {
+    min-width: 0;
+    padding: 22px 23px 23px;
+    border: 1px solid rgba(85, 108, 96, 0.11);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.64);
+    box-shadow: 0 8px 18px rgba(65, 85, 75, 0.06);
+}
+
+.experience-card-meta {
+    margin-bottom: 8px;
+}
+
+.experience-card-date {
+    color: #8a958f;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.experience-card-content h3 {
+    margin-bottom: 5px;
+    color: #304841;
+    font-size: 1.08rem;
+    line-height: 1.35;
+}
+
+.experience-card-role {
+    margin-bottom: 14px;
+    color: #786b85;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.experience-card-overview {
+    margin-bottom: 20px;
+    color: #4d6059;
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+.experience-card-section {
+    padding-top: 16px;
+    border-top: 1px solid rgba(85, 108, 96, 0.1);
+}
+
+.experience-card-section h4 {
+    margin-bottom: 9px;
+    color: #77877f;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.experience-card-section ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #4d6059;
+}
+
+.experience-card-section li {
+    margin-bottom: 7px;
+    padding-left: 2px;
+    font-size: 0.83rem;
+    line-height: 1.6;
+}
+
+.experience-card-section li:last-child {
+    margin-bottom: 0;
+}
+
+.experience-highlights {
+    margin-top: 30px;
+    padding: 22px 23px 23px;
+    border: 1px solid rgba(142, 119, 158, 0.14);
+    border-radius: 20px;
+    background: rgba(228, 214, 237, 0.32);
+}
+
+.experience-highlights-eyebrow {
+    margin-bottom: 13px;
+    color: #7a7189;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.experience-highlight-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.experience-highlight-tags span {
+    padding: 7px 11px;
+    border: 1px solid rgba(142, 119, 158, 0.15);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.58);
+    color: #665774;
+    font-size: 0.72rem;
+    font-weight: 750;
+}
+
+.experience-highlights-text {
+    color: #5d6870;
+    font-size: 0.84rem;
+    line-height: 1.65;
+}
+
+.experience-page-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 27px;
+}
+
+.experience-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.58);
+    color: #63766e;
+    font: inherit;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.experience-back-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(-2px);
+}
+
+@media (max-width: 700px) {
+    .experience-modal {
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    .experience-modal-panel {
+        width: 100%;
+        max-height: calc(100vh - 32px);
+        padding: 32px 18px 22px;
+        border-radius: 22px;
+    }
+
+    .experience-modal-close {
+        top: 12px;
+        right: 12px;
+    }
+
+    .experience-page-header {
+        padding-right: 35px;
+        margin-bottom: 24px;
+    }
+
+    .experience-page-header h2 {
+        font-size: 2rem;
+    }
+
+    .experience-timeline {
+        gap: 14px;
+    }
+
+    .experience-timeline::before {
+        left: 53px;
+        top: 24px;
+        bottom: 24px;
+    }
+
+    .experience-card {
+        grid-template-columns: 43px minmax(0, 1fr);
+        gap: 19px;
+    }
+
+    .experience-card-year {
+        padding-top: 18px;
+        font-size: 0.68rem;
+    }
+
+    .experience-card-year::after {
+        top: 23px;
+        right: -26px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .experience-card-content {
+        padding: 19px 17px 20px;
+    }
+
+    .experience-card-content h3 {
+        font-size: 0.98rem;
+    }
+
+    .experience-card-overview,
+    .experience-card-section li {
+        font-size: 0.8rem;
+    }
+
+    .experience-highlights {
+        margin-top: 23px;
+        padding: 19px 17px 20px;
+    }
+
+    .experience-page-footer {
+        margin-top: 21px;
+    }
+
+    .experience-back-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* ==================================================
+   SIDE PROJECTS PAGE — SCOPED STYLES ONLY
+   ================================================== */
+
+body.side-projects-page-open {
+    overflow: hidden;
+}
+
+.side-projects-trigger {
+    cursor: pointer;
+}
+
+.side-projects-trigger:focus-visible {
+    outline: 3px solid rgba(255, 248, 233, 0.85);
+    outline-offset: 5px;
+}
+
+.side-projects-modal,
+.side-project-detail-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1120;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.side-project-detail-modal {
+    z-index: 1130;
+}
+
+.side-projects-modal.is-open,
+.side-project-detail-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.side-projects-backdrop,
+.side-project-detail-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(38, 57, 52, 0.38);
+    backdrop-filter: blur(5px);
+}
+
+.side-projects-panel,
+.side-project-detail-panel {
+    position: relative;
+    z-index: 2;
+    width: min(900px, 100%);
+    max-height: min(820px, 90vh);
+    overflow-y: auto;
+    padding: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 28px;
+    background:
+        radial-gradient(
+            circle at 12% 0%,
+            rgba(255, 255, 255, 0.78),
+            transparent 30%
+        ),
+        #eef3e9;
+    box-shadow:
+        0 30px 70px rgba(45, 70, 60, 0.28),
+        0 8px 20px rgba(45, 70, 60, 0.12);
+    transform: translateY(18px) scale(0.98);
+    transition: transform 0.25s ease;
+}
+
+.side-projects-modal.is-open .side-projects-panel,
+.side-project-detail-modal.is-open .side-project-detail-panel {
+    transform: translateY(0) scale(1);
+}
+
+.side-projects-close,
+.side-project-detail-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.72);
+    color: #536960;
+    font-size: 1.45rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.side-projects-close:hover,
+.side-project-detail-close:hover {
+    background: #ffffff;
+    transform: rotate(4deg);
+}
+
+.side-projects-page-header,
+.side-project-detail-header {
+    padding-right: 45px;
+    margin-bottom: 32px;
+}
+
+.side-projects-page-eyebrow,
+.side-project-detail-eyebrow {
+    margin-bottom: 7px;
+    color: #7a7189;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.side-projects-page-header h2,
+.side-project-detail-header h2 {
+    margin-bottom: 9px;
+    color: #304841;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+.side-projects-page-header > p:last-child {
+    color: #687973;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.side-projects-directory-list {
+    display: grid;
+    gap: 12px;
+}
+
+.side-project-directory-card {
+    position: relative;
+    width: 100%;
+    min-height: 112px;
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(85, 108, 96, 0.12);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.64);
+    color: #344741;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.side-project-directory-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 22px rgba(65, 85, 75, 0.12);
+}
+
+.side-project-directory-card:focus-visible {
+    outline: 3px solid rgba(120, 145, 132, 0.32);
+    outline-offset: 3px;
+}
+
+.side-project-directory-number {
+    align-self: start;
+    padding-top: 2px;
+    color: #9aabb0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.side-project-directory-content {
+    min-width: 0;
+}
+
+.side-project-directory-content strong,
+.side-project-directory-content > span {
+    display: block;
+}
+
+.side-project-directory-content strong {
+    margin-bottom: 5px;
+    color: #3b514a;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.side-project-directory-content > span:not(.side-project-directory-tags) {
+    color: #687973;
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+.side-project-directory-tags {
+    margin-top: 7px;
+    color: #786b85;
+    font-size: 0.7rem;
+    font-weight: 750;
+    line-height: 1.45;
+}
+
+.side-project-directory-action {
+    color: #63766e;
+    font-size: 0.72rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.side-projects-page-footer,
+.side-project-detail-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 27px;
+}
+
+.side-projects-back-button,
+.side-project-detail-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 14px;
+    border: 0;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.58);
+    color: #63766e;
+    font: inherit;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.side-projects-back-button:hover,
+.side-project-detail-back-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(-2px);
+}
+
+.side-project-detail-back-button {
+    margin-bottom: 22px;
+}
+
+.side-project-detail-subtitle {
+    margin-bottom: 14px;
+    color: #786b85;
+    font-size: 0.86rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.side-project-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.side-project-detail-tags span {
+    padding: 7px 11px;
+    border: 1px solid rgba(142, 119, 158, 0.15);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.58);
+    color: #665774;
+    font-size: 0.72rem;
+    font-weight: 750;
+}
+
+.side-project-detail-section {
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(85, 108, 96, 0.1);
+}
+
+.side-project-section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+
+.side-project-section-heading > span {
+    padding-top: 2px;
+    color: #9aabb0;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.side-project-section-heading p {
+    margin-bottom: 4px;
+    color: #7a7189;
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.side-project-section-heading h3 {
+    color: #304841;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.side-project-copy {
+    max-width: 820px;
+}
+
+.side-project-copy p {
+    margin-bottom: 14px;
+    color: #43564f;
+    font-size: 0.94rem;
+    line-height: 1.75;
+}
+
+.side-project-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.side-project-role-card {
+    max-width: 820px;
+    padding: 25px 27px;
+    border: 1px solid rgba(85, 108, 96, 0.11);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 7px 18px rgba(65, 85, 75, 0.05);
+}
+
+.side-project-role-card h4 {
+    margin-bottom: 15px;
+    color: #665774;
+    font-size: 0.92rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.side-project-role-card p {
+    margin-bottom: 12px;
+    color: #4e615a;
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.side-project-role-card p:last-child {
+    margin-bottom: 0;
+}
+
+.side-project-result-card {
+    position: relative;
+    overflow: hidden;
+    padding: 29px 28px 27px;
+    border: 1px solid rgba(142, 119, 158, 0.18);
+    border-radius: 22px;
+    background:
+        radial-gradient(
+            circle at 88% 15%,
+            rgba(255, 255, 255, 0.72),
+            transparent 29%
+        ),
+        rgba(228, 214, 237, 0.48);
+}
+
+.side-project-result-label {
+    margin-bottom: 10px;
+    color: #304841;
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.side-project-result-card > p:not(.side-project-result-label):not(.side-project-result-award) {
+    max-width: 800px;
+    margin-bottom: 12px;
+    color: #4e615a;
+    font-size: 0.94rem;
+    line-height: 1.7;
+}
+
+.side-project-result-award {
+    margin-bottom: 19px;
+    color: #665774;
+    font-size: 0.92rem;
+    font-weight: 800;
+    line-height: 1.6;
+}
+
+.side-project-result-tags {
+    margin-top: 4px;
+}
+
+.side-project-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+    margin-top: 15px;
+}
+
+.side-project-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid rgba(95, 119, 107, 0.18);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.78);
+    color: #536960;
+    font-size: 0.78rem;
+    font-weight: 750;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 7px 16px rgba(65, 85, 75, 0.08);
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.side-project-links a:hover {
+    transform: translateY(-2px);
+    background: #ffffff;
+    box-shadow: 0 11px 22px rgba(65, 85, 75, 0.13);
+}
+
+.side-project-learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.side-project-learning-card {
+    min-width: 0;
+    padding: 20px 18px;
+    border: 1px solid rgba(85, 108, 96, 0.11);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.62);
+}
+
+.side-project-learning-label {
+    margin-bottom: 10px;
+    color: #786b85;
+    font-size: 0.76rem;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.side-project-learning-card > p:last-child {
+    color: #4e615a;
+    font-size: 0.82rem;
+    line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+    .side-projects-modal,
+    .side-project-detail-modal {
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    .side-projects-panel,
+    .side-project-detail-panel {
+        width: 100%;
+        max-height: calc(100vh - 32px);
+        padding: 32px 18px 22px;
+        border-radius: 22px;
+    }
+
+    .side-projects-close,
+    .side-project-detail-close {
+        top: 12px;
+        right: 12px;
+    }
+
+    .side-projects-page-header,
+    .side-project-detail-header {
+        padding-right: 35px;
+        margin-bottom: 24px;
+    }
+
+    .side-projects-page-header h2,
+    .side-project-detail-header h2 {
+        font-size: 2rem;
+    }
+
+    .side-project-directory-card {
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .side-project-directory-action {
+        grid-column: 2;
+        justify-self: start;
+        margin-top: 4px;
+    }
+
+    .side-project-directory-content strong {
+        font-size: 0.86rem;
+    }
+
+    .side-project-directory-content > span:not(.side-project-directory-tags) {
+        font-size: 0.74rem;
+    }
+
+    .side-project-copy p,
+    .side-project-role-card p,
+    .side-project-result-card > p:not(.side-project-result-label):not(.side-project-result-award) {
+        font-size: 0.84rem;
+    }
+
+    .side-project-role-card,
+    .side-project-result-card {
+        padding: 20px 17px;
+    }
+
+    .side-project-learning-grid,
+    .side-project-links {
+        grid-template-columns: 1fr;
+    }
+
+    .side-project-learning-card {
+        padding: 17px;
+    }
+
+    .side-project-detail-footer,
+    .side-projects-page-footer {
+        margin-top: 21px;
+    }
+
+    .side-projects-back-button,
+    .side-project-detail-back-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* ==================================================
+   ABOUT ME PAGE — SCOPED STYLES ONLY
+   ================================================== */
+
+body.about-me-page-open {
+    overflow: hidden;
+}
+
+.about-house {
+    cursor: pointer;
+}
+
+.about-me-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+}
+
+.about-me-modal.is-open {
+    display: flex;
+}
+
+.about-me-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(43, 55, 48, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.about-me-panel {
+    position: relative;
+    z-index: 1;
+    width: min(1080px, 100%);
+    max-height: min(92vh, 980px);
+    overflow-y: auto;
+    padding: 58px 58px 34px;
+    border-radius: 30px;
+    background: #f8faf6;
+    border: 1px solid rgba(111, 126, 117, 0.18);
+    box-shadow: 0 28px 70px rgba(43, 55, 48, 0.2);
+    color: #40524b;
+    scrollbar-width: thin;
+}
+
+.about-me-close {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: #e9eee8;
+    color: #53655e;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-me-close:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(50, 70, 55, 0.14);
+}
+
+.about-me-header {
+    padding: 8px 0 28px;
+    text-align: center;
+}
+
+.about-me-eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    color: #84948d;
+}
+
+.about-me-header h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.04em;
+    color: #344741;
+}
+
+.about-me-header > p:last-child {
+    margin: 10px 0 0;
+    font-size: 0.95rem;
+    color: #75837e;
+}
+
+.about-me-content {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.about-me-section-card,
+.about-me-card,
+.about-me-statement-card {
+    border: 1px solid rgba(111, 126, 117, 0.15);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 10px 24px rgba(50, 70, 55, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-me-card:hover,
+.about-me-statement-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 28px rgba(50, 70, 55, 0.13);
+}
+
+.about-me-profile {
+    padding: 28px;
+    background: #eef3ec;
+}
+
+.about-me-profile-heading {
+    margin-bottom: 16px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    color: #7f8e87;
+}
+
+.about-me-profile-top {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.about-me-photo-slot {
+    flex: 0 0 112px;
+    width: 112px;
+    height: 144px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    border: 1px dashed rgba(83, 101, 94, 0.35);
+    background: #f7f9f5;
+    color: #87948e;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    overflow: hidden;
+}
+
+.about-me-photo-slot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.about-me-profile-intro {
+    min-width: 0;
+}
+
+.about-me-name-cn {
+    margin: 0 0 2px;
+    font-size: 1rem;
+    color: #7c8b84;
+}
+
+.about-me-profile-intro h3 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: #344741;
+}
+
+.about-me-degree {
+    margin: 8px 0 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #6b7a74;
+}
+
+.about-me-basic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.about-me-info-item {
+    min-width: 0;
+    padding: 14px 15px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.about-me-info-label,
+.about-me-card-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #89968f;
+}
+
+.about-me-info-item strong {
+    display: block;
+    overflow-wrap: anywhere;
+    font-size: 0.86rem;
+    color: #40524b;
+}
+
+.about-me-section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.about-me-section-heading > span {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #a2ada7;
+}
+
+.about-me-section-heading h3 {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: #52645d;
+}
+
+.about-me-card-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.about-me-education-grid {
+    grid-template-columns: 1.35fr 0.95fr;
+}
+
+.about-me-card {
+    padding: 22px;
+}
+
+.about-me-card-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.about-me-card-index {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #9aa69f;
+}
+
+.about-me-date {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #7d8b85;
+}
+
+.about-me-card h4 {
+    margin: 0;
+    color: #3f514a;
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+.about-me-card-degree {
+    margin: 7px 0 0;
+    font-weight: 700;
+    color: #736c83;
+}
+
+.about-me-card-location,
+.about-me-award-card p,
+.about-me-language-card p {
+    margin: 6px 0 0;
+    font-size: 0.86rem;
+    color: #7b8983;
+}
+
+.about-me-subheading {
+    margin: 20px 0 9px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #87948e;
+}
+
+.about-me-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.about-me-tags span {
+    padding: 6px 9px;
+    border-radius: 999px;
+    background: #edf2ed;
+    color: #5c6c65;
+    font-size: 0.72rem;
+    line-height: 1.2;
+}
+
+.about-me-awards-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.about-me-award-card {
+    min-height: 145px;
+}
+
+.about-me-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.about-me-skill-card h4 {
+    margin-bottom: 13px;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+}
+
+.about-me-language-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.about-me-language-card {
+    text-align: center;
+}
+
+.about-me-language-card h4 {
+    font-size: 1.05rem;
+}
+
+.about-me-statement-card {
+    padding: 26px 28px;
+    background: #f0f4ee;
+}
+
+.about-me-statement-card p {
+    margin: 0;
+    white-space: pre-line;
+    font-size: 0.96rem;
+    line-height: 1.85;
+    color: #52635c;
+}
+
+.about-me-footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.about-me-back-button {
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 999px;
+    background: #dce8dc;
+    color: #53655e;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-me-back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 18px rgba(50, 70, 55, 0.13);
+}
+
+@media (max-width: 800px) {
+    .about-me-modal {
+        padding: 14px;
+    }
+
+    .about-me-panel {
+        max-height: 95vh;
+        padding: 48px 22px 28px;
+        border-radius: 24px;
+    }
+
+    .about-me-profile-top {
+        align-items: flex-start;
+    }
+
+    .about-me-basic-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-me-education-grid,
+    .about-me-awards-grid,
+    .about-me-skills-grid,
+    .about-me-language-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .about-me-panel {
+        padding: 46px 16px 24px;
+    }
+
+    .about-me-profile {
+        padding: 20px;
+    }
+
+    .about-me-profile-top {
+        gap: 15px;
+    }
+
+    .about-me-photo-slot {
+        flex-basis: 88px;
+        width: 88px;
+        height: 116px;
+    }
+
+    .about-me-degree {
+        font-size: 0.84rem;
+    }
+
+    .about-me-basic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-me-card,
+    .about-me-statement-card {
+        padding: 18px;
+    }
+
+    .about-me-card-topline {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+
+/* ==================================================
+   CAREER ISLAND — BUILDING VISUAL UPGRADE ONLY
+   The existing building elements, labels, and click
+   handlers remain the same; these rules only restyle
+   their visual presentation.
+   ================================================== */
+
+.building {
+    width: 270px;
+    min-height: 250px;
+    padding: 0 8px 10px;
+    justify-content: flex-end;
+    background: transparent !important;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    text-shadow: none;
+}
+
+.building:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: none;
+}
+
+.about-house:hover,
+.ai-lab:hover,
+.experience-house:hover {
+    transform: translateX(-50%) translateY(-6px) scale(1.02);
+}
+
+.building-icon.building-visual {
+    width: 100%;
+    height: 194px;
+    margin: 0 0 -1px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 0;
+    line-height: 0;
+    filter: drop-shadow(0 10px 9px rgba(60, 75, 61, 0.15));
+    transition: filter 0.22s ease;
+}
+
+.building:hover .building-icon.building-visual {
+    filter: drop-shadow(0 14px 12px rgba(60, 75, 61, 0.2));
+}
+
+.building-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+.building-name,
+.building-subtitle {
+    position: relative;
+    z-index: 4;
+    width: min(235px, 92%);
+    box-sizing: border-box;
+}
+
+.building-name {
+    margin-top: -2px;
+    padding: 9px 14px 3px;
+    border: 1px solid rgba(126, 101, 73, 0.24);
+    border-bottom: 0;
+    border-radius: 14px 14px 0 0;
+    background: linear-gradient(180deg, rgba(255, 249, 235, .98), rgba(245, 232, 204, .98));
+    color: #4b4038;
+    font-size: .82rem;
+    font-weight: 900;
+    letter-spacing: .075em;
+    box-shadow: 0 5px 12px rgba(68, 67, 55, .11);
+}
+
+.building-subtitle {
+    margin-top: 0;
+    padding: 2px 14px 9px;
+    border: 1px solid rgba(126, 101, 73, 0.24);
+    border-top: 0;
+    border-radius: 0 0 14px 14px;
+    background: rgba(255, 249, 235, .98);
+    color: #766d63;
+    font-size: .69rem;
+    line-height: 1.35;
+    box-shadow: 0 7px 14px rgba(68, 67, 55, .12);
+}
+
+.about-house {
+    width: 270px;
+    min-height: 250px;
+    padding-bottom: 0;
+    background: transparent !important;
+}
+
+.ai-lab {
+    width: 290px;
+    min-height: 250px;
+    padding-bottom: 0;
+    background: transparent !important;
+}
+
+.experience-house {
+    width: 290px;
+    min-height: 250px;
+    padding-bottom: 0;
+    background: transparent !important;
+}
+
+.side-projects-trigger {
+    width: 310px;
+    min-height: 250px;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: transform .22s ease, filter .22s ease;
+}
+
+.side-projects-trigger:hover {
+    transform: translateX(-50%) translateY(-6px) scale(1.02);
+    filter: drop-shadow(0 14px 13px rgba(70, 61, 52, .16));
+}
+
+.side-projects-trigger:focus-visible {
+    outline: 3px solid rgba(105, 151, 163, .45);
+    outline-offset: 8px;
+    border-radius: 18px;
+}
+
+.side-projects-trigger .side-studio-visual {
+    width: 100%;
+    height: 205px;
+    display: block;
+    margin-bottom: -3px;
+    pointer-events: none;
+    filter: drop-shadow(0 10px 9px rgba(60, 75, 61, .15));
+}
+
+.side-projects-trigger:hover .side-studio-visual {
+    filter: drop-shadow(0 14px 12px rgba(60, 75, 61, .2));
+}
+
+.side-projects-trigger .sign-post {
+    width: 240px;
+    padding: 10px 15px 12px;
+    border-radius: 13px;
+    background: linear-gradient(180deg, rgba(248, 229, 194, .99), rgba(224, 178, 127, .99));
+    border: 1px solid rgba(121, 83, 57, .35);
+    box-shadow: 0 8px 16px rgba(79, 61, 47, .16);
+    pointer-events: none;
+}
+
+.side-projects-trigger .sign-title {
+    color: #5a4435;
+    font-weight: 900;
+}
+
+.side-projects-trigger .sign-subtitle,
+.side-projects-trigger .side-project-item {
+    color: #725d4e;
+}
+
+.side-projects-trigger::after {
+    bottom: -18px;
+    height: 35px;
+    width: 8px;
+}
+
+/* Give the buildings a little more visual depth without moving them. */
+.building::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 26px;
+    width: 180px;
+    height: 160px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.22), transparent 67%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Keep decorative building artwork out of the hit-testing flow. */
+.building-svg,
+.building-visual,
+.side-studio-visual,
+.side-projects-trigger .sign-post {
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    .building {
+        width: 230px;
+        min-height: 220px;
+    }
+
+    .about-house,
+    .ai-lab,
+    .experience-house {
+        width: 230px;
+        min-height: 220px;
+    }
+
+    .building-icon.building-visual {
+        height: 172px;
+    }
+
+    .building-name,
+    .building-subtitle {
+        width: min(210px, 94%);
+    }
+
+    .side-projects-trigger {
+        width: 250px;
+        min-height: 220px;
+    }
+
+    .side-projects-trigger .side-studio-visual {
+        height: 175px;
+    }
+
+    .side-projects-trigger .sign-post {
+        width: 215px;
+    }
+}
+
+@media (max-width: 640px) {
+    .building-icon.building-visual {
+        height: 160px;
+    }
+
+    .building-name {
+        font-size: .76rem;
+        padding-top: 8px;
+    }
+
+    .building-subtitle {
+        font-size: .64rem;
+    }
+
+    .side-projects-trigger .side-studio-visual {
+        height: 165px;
+    }
+}
+
+/* ==================================================
+   HOMEPAGE — BUILDING FLOAT + INTEGRATED SIGN POLISH
+   Visual-only layer. Existing content, IDs and handlers
+   remain unchanged.
+   ================================================== */
+
+.island {
+    isolation: isolate;
+}
+
+.island-map {
+    filter: saturate(1.025) contrast(1.018) brightness(1.01);
+}
+
+.building,
+.side-projects-trigger {
+    will-change: transform, filter;
+    transition:
+        transform 0.28s cubic-bezier(.2,.75,.25,1),
+        filter 0.28s ease;
+}
+
+.building:hover {
+    filter: drop-shadow(0 15px 20px rgba(45, 62, 53, 0.16));
+}
+
+.about-house:hover,
+.ai-lab:hover,
+.experience-house:hover {
+    transform: translateX(-50%) translateY(-7px) scale(1.025);
+}
+
+.side-projects-trigger:hover {
+    transform: translateX(-50%) translateY(-7px) scale(1.025);
+    filter: drop-shadow(0 15px 20px rgba(45, 62, 53, 0.16));
+}
+
+/* The visual artwork is part of the clickable building itself. */
+.building-visual,
+.side-studio-visual {
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    display: block;
+    pointer-events: none;
+    line-height: 0;
+    transform: translateX(-50%);
+}
+
+.building-visual img,
+.side-studio-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    user-select: none;
+    pointer-events: none;
+}
+
+.about-house .building-visual {
+    top: -6px;
+    width: 246px;
+}
+
+.ai-lab .building-visual {
+    top: -38px;
+    width: 318px;
+}
+
+.experience-house .building-visual {
+    top: -28px;
+    width: 286px;
+}
+
+.side-projects-trigger .side-studio-visual {
+    top: -18px;
+    width: 292px;
+    height: auto;
+    margin: 0;
+}
+
+/* The sign travels with the building; it no longer performs a
+   separate hover jump of its own. */
+.building-plaque,
+.side-projects-trigger .sign-post {
+    position: relative;
+    z-index: 4;
+    transform: none !important;
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.building-plaque {
+    width: min(220px, 88%);
+    padding: 8px 13px 9px;
+    border: 1px solid rgba(126, 101, 73, 0.22);
+    border-radius: 13px;
+    background: rgba(255, 248, 230, 0.86);
+    box-shadow:
+        0 7px 14px rgba(66, 67, 56, 0.11),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(2px);
+}
+
+.building:hover .building-plaque,
+.side-projects-trigger:hover .sign-post {
+    background: rgba(255, 248, 230, 0.91);
+    border-color: rgba(126, 101, 73, 0.27);
+    box-shadow:
+        0 9px 17px rgba(66, 67, 56, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.plaque-icon {
+    opacity: 0.92;
+}
+
+.building-name,
+.building-subtitle,
+.sign-title,
+.sign-subtitle {
+    text-shadow: 0 1px 0 rgba(255,255,255,.45);
+}
+
+.side-projects-trigger .sign-post {
+    width: 238px;
+    padding: 9px 14px 10px;
+    border-radius: 13px;
+    background: rgba(241, 211, 172, 0.91);
+    border: 1px solid rgba(121, 83, 57, 0.26);
+    box-shadow:
+        0 8px 16px rgba(79, 61, 47, 0.13),
+        inset 0 1px 0 rgba(255, 255, 255, 0.46);
+}
+
+.side-projects-trigger:hover .sign-post {
+    background: rgba(245, 219, 183, 0.95);
+}
+
+@media (max-width: 900px) {
+    .about-house .building-visual {
+        width: 215px;
+    }
+
+    .ai-lab .building-visual {
+        width: 280px;
+        top: -32px;
+    }
+
+    .experience-house .building-visual {
+        width: 252px;
+        top: -24px;
+    }
+
+    .side-projects-trigger .side-studio-visual {
+        width: 250px;
+        top: -14px;
+    }
+
+    .building-plaque {
+        width: min(205px, 90%);
+    }
+
+    .side-projects-trigger .sign-post {
+        width: 215px;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-house .building-visual {
+        width: 175px;
+        top: -2px;
+    }
+
+    .ai-lab .building-visual {
+        width: 230px;
+        top: -24px;
+    }
+
+    .experience-house .building-visual {
+        width: 205px;
+        top: -18px;
+    }
+
+    .side-projects-trigger .side-studio-visual {
+        width: 205px;
+        top: -10px;
+    }
+
+    .building-plaque {
+        width: min(170px, 92%);
+        padding: 6px 9px 7px;
+    }
+
+    .side-projects-trigger .sign-post {
+        width: 185px;
+        padding: 7px 9px 8px;
+    }
+}
+
+.building-visual img,
+.side-studio-visual img {
+    filter: drop-shadow(0 10px 11px rgba(45, 61, 53, 0.13));
+    transition: filter 0.28s ease;
+}
+
+.building:hover .building-visual img,
+.side-projects-trigger:hover .side-studio-visual img {
+    filter: drop-shadow(0 15px 14px rgba(45, 61, 53, 0.18));
+}
+
+
+
+/* ==================================================
+   CAREER ISLAND — ONE COMPLETE ILLUSTRATION
+   The map already contains the island, buildings,
+   roads, vegetation, signs, MY JOURNEY and scenery.
+   The DOM elements below are interaction-only hotspots.
+   They must never draw a second visual building layer.
+   ================================================== */
+
+.island-map {
+    position: relative;
+    z-index: 1;
+}
+
+.land {
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Transparent interaction hotspots only. */
+.land .building,
+.land .side-projects-trigger {
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: transparent;
+    text-shadow: none;
+    cursor: pointer;
+    pointer-events: auto;
+    overflow: visible;
+    transform: none;
+    transition:
+        filter 360ms ease,
+        transform 360ms ease;
+}
+
+.land .building > *,
+.land .side-projects-trigger > * {
+    display: none !important;
+}
+
+/*
+   The highlight is a soft light over the existing pixels underneath.
+   It is intentionally diffuse rather than a card, border, or replacement building.
+*/
+.land .building::before,
+.land .side-projects-trigger::before {
+    content: "";
+    position: absolute;
+    inset: -8%;
+    z-index: 1;
+    border-radius: 48%;
+    opacity: 0;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.16) 0%,
+            rgba(255, 255, 255, 0.08) 34%,
+            rgba(255, 255, 255, 0) 72%
+        );
+    filter: blur(7px);
+    pointer-events: none;
+    transition: opacity 360ms ease, transform 360ms ease;
+}
+
+.land .building:hover::before,
+.land .building:focus-visible::before,
+.land .side-projects-trigger:hover::before,
+.land .side-projects-trigger:focus-visible::before {
+    opacity: 1;
+    transform: scale(1.015);
+}
+
+.land .building:hover,
+.land .building:focus-visible,
+.land .side-projects-trigger:hover,
+.land .side-projects-trigger:focus-visible {
+    transform: scale(1.012);
+    filter: brightness(1.025) saturate(1.025) drop-shadow(0 5px 10px rgba(58, 73, 66, 0.13));
+}
+
+.land .building:active,
+.land .side-projects-trigger:active {
+    transform: scale(0.985);
+    filter: brightness(1.01) saturate(1.01);
+    transition-duration: 100ms;
+}
+
+/* Exact hotspots follow the four buildings in the 1600 × 900 illustration. */
+.land .about-house {
+    left: 43.5%;
+    top: 4.5%;
+    width: 16.5%;
+    height: 19.5%;
+    transform: none;
+}
+
+.land .ai-lab {
+    left: 19%;
+    top: 28%;
+    width: 19%;
+    height: 21%;
+    transform: none;
+}
+
+.land .experience-house {
+    left: 68%;
+    top: 29%;
+    width: 17%;
+    height: 20%;
+    transform: none;
+}
+
+.land .side-projects-trigger {
+    left: 44%;
+    top: 55.5%;
+    width: 18.5%;
+    height: 20%;
+    transform: none;
+}
+
+.land .about-house:hover,
+.land .about-house:focus-visible,
+.land .ai-lab:hover,
+.land .ai-lab:focus-visible,
+.land .experience-house:hover,
+.land .experience-house:focus-visible,
+.land .side-projects-trigger:hover,
+.land .side-projects-trigger:focus-visible {
+    transform: scale(1.012);
+}
+
+/* No visual focus rectangle over the illustration; keep keyboard focus discoverable via glow. */
+.land .building:focus-visible,
+.land .side-projects-trigger:focus-visible {
+    outline: none;
+}
+
+/* MY JOURNEY is already part of the complete illustration. */
+.land .island-sign {
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+    /* Keep the same image coordinate system; the image scales as one piece. */
+    .land .about-house {
+        left: 43.25%;
+        top: 3.5%;
+        width: 17.5%;
+        height: 22.5%;
+    }
+
+    .land .ai-lab {
+        left: 18.25%;
+        top: 26%;
+        width: 20.5%;
+        height: 25.5%;
+    }
+
+    .land .experience-house {
+        left: 67%;
+        top: 27%;
+        width: 19%;
+        height: 24%;
+    }
+
+    .land .side-projects-trigger {
+        left: 43.25%;
+        top: 55%;
+        width: 20.5%;
+        height: 22%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .land .building,
+    .land .side-projects-trigger,
+    .land .building::before,
+    .land .side-projects-trigger::before {
+        transition: none !important;
+    }
+}
+
+/* Hover highlight: gently brighten the existing pixels underneath the hotspot. */
+.land .building::after,
+.land .side-projects-trigger::after {
+    content: "";
+    position: absolute;
+    inset: 1%;
+    z-index: 0;
+    border-radius: 44%;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.025);
+    -webkit-backdrop-filter: brightness(1.06) saturate(1.035);
+    backdrop-filter: brightness(1.06) saturate(1.035);
+    clip-path: ellipse(47% 47% at 50% 50%);
+    pointer-events: none;
+    transition: opacity 360ms ease;
+}
+
+.land .building:hover::after,
+.land .building:focus-visible::after,
+.land .side-projects-trigger:hover::after,
+.land .side-projects-trigger:focus-visible::after {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .land .building::after,
+    .land .side-projects-trigger::after {
+        transition: none !important;
+    }
+}
+
+/* ==================================================
+   HOMEPAGE — AMBIENT ISLAND MOTION SYSTEM
+   Motion-only layer. The complete island illustration,
+   buildings, labels, hotspots and navigation remain unchanged.
+   ================================================== */
+
+.ambient-motion {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.ambient-wave,
+.ambient-cloud,
+.ambient-bird,
+.ambient-boat,
+.ambient-breeze {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+}
+
+/* Soft ocean flow: intentionally sparse and very low contrast. */
+.ambient-wave {
+    left: -8%;
+    width: 116%;
+    height: 15%;
+    border-top: 1px solid rgba(255, 255, 255, 0.11);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 50%;
+    opacity: 0.34;
+    filter: blur(0.35px);
+    -webkit-mask-image: radial-gradient(ellipse 44% 43% at 50% 50%, transparent 0 69%, #000 77%, #000 100%);
+    mask-image: radial-gradient(ellipse 44% 43% at 50% 50%, transparent 0 69%, #000 77%, #000 100%);
+    transform: translateX(0) scaleX(1);
+    will-change: transform, opacity;
+    animation: ambient-ocean-drift 22s ease-in-out infinite alternate;
+}
+
+.ambient-wave::after {
+    content: "";
+    position: absolute;
+    inset: 25% 7%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.ambient-wave-one { top: 7%; animation-duration: 20s; animation-delay: -7s; }
+.ambient-wave-two { top: 29%; animation-duration: 24s; animation-delay: -13s; transform: translateX(-1.5%) scaleX(1.015); }
+.ambient-wave-three { top: 63%; animation-duration: 27s; animation-delay: -3s; transform: translateX(1%) scaleX(1.01); }
+.ambient-wave-four { top: 82%; animation-duration: 30s; animation-delay: -17s; opacity: 0.25; }
+
+@keyframes ambient-ocean-drift {
+    0% { transform: translateX(-1.2%) scaleX(0.998); opacity: 0.25; }
+    50% { opacity: 0.36; }
+    100% { transform: translateX(1.8%) scaleX(1.008); opacity: 0.3; }
+}
+
+/* Very soft cloud-light drift. These do not replace or redraw the map clouds. */
+.ambient-cloud {
+    width: 11%;
+    height: 8%;
+    border-radius: 50%;
+    opacity: 0.12;
+    filter: blur(9px);
+    background: rgba(255, 255, 255, 0.55);
+    will-change: transform, opacity;
+    animation: ambient-cloud-drift 44s linear infinite alternate;
+}
+
+.ambient-cloud-one { left: 2%; top: 6%; animation-duration: 38s; animation-delay: -16s; }
+.ambient-cloud-two { right: 2.5%; top: 4%; width: 10%; animation-duration: 49s; animation-delay: -25s; animation-direction: alternate-reverse; }
+
+@keyframes ambient-cloud-drift {
+    0% { transform: translateX(-8px); opacity: 0.08; }
+    50% { opacity: 0.14; }
+    100% { transform: translateX(18px); opacity: 0.1; }
+}
+
+/* Tiny distant bird cues: intentionally faint so the original illustration stays dominant. */
+.ambient-bird {
+    color: rgba(255, 255, 255, 0.46);
+    font-family: Georgia, serif;
+    font-size: clamp(9px, 1.05vw, 15px);
+    line-height: 1;
+    letter-spacing: -0.22em;
+    opacity: 0.34;
+    text-shadow: 0 1px 2px rgba(43, 107, 119, 0.08);
+    will-change: transform, opacity;
+    animation: ambient-bird-flight 28s ease-in-out infinite;
+}
+
+.ambient-bird-one { left: 78%; top: 11%; animation-duration: 27s; animation-delay: -9s; }
+.ambient-bird-two { left: 67%; top: 7%; font-size: clamp(7px, 0.82vw, 12px); animation-duration: 34s; animation-delay: -21s; animation-direction: alternate-reverse; }
+
+@keyframes ambient-bird-flight {
+    0% { transform: translate3d(-8px, 2px, 0) rotate(-1deg); opacity: 0.18; }
+    35% { transform: translate3d(22px, -3px, 0) rotate(1deg); opacity: 0.36; }
+    70% { transform: translate3d(47px, 1px, 0) rotate(-1deg); opacity: 0.28; }
+    100% { transform: translate3d(68px, -2px, 0) rotate(1deg); opacity: 0.18; }
+}
+
+/* Existing boats are already part of the illustration; these soft highlights only suggest bobbing water. */
+.ambient-boat {
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.14) 0 24%, rgba(255,255,255,0.04) 42%, transparent 72%);
+    opacity: 0.55;
+    will-change: transform, opacity;
+    animation: ambient-boat-bob 6s ease-in-out infinite alternate;
+}
+
+.ambient-boat-left { left: 3.8%; top: 74%; width: 9%; height: 6%; animation-duration: 6.2s; animation-delay: -2.4s; }
+.ambient-boat-right { left: 63.2%; top: 83%; width: 8%; height: 5%; animation-duration: 5.4s; animation-delay: -4.1s; animation-direction: alternate-reverse; }
+
+@keyframes ambient-boat-bob {
+    0% { transform: translate3d(0, 2px, 0) rotate(-0.4deg); opacity: 0.42; }
+    50% { opacity: 0.62; }
+    100% { transform: translate3d(1px, -2px, 0) rotate(0.4deg); opacity: 0.5; }
+}
+
+/* A few almost-invisible breeze glints near vegetation/water; no island or building movement. */
+.ambient-breeze {
+    width: 5%;
+    height: 1.5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(0.4px);
+    will-change: transform, opacity;
+    animation: ambient-breeze-pass 8s ease-in-out infinite alternate;
+}
+
+.ambient-breeze-one { left: 16%; top: 43%; animation-duration: 7.5s; animation-delay: -3s; }
+.ambient-breeze-two { left: 72%; top: 51%; animation-duration: 9s; animation-delay: -5.5s; }
+.ambient-breeze-three { left: 38%; top: 78%; animation-duration: 8.2s; animation-delay: -6.8s; }
+
+@keyframes ambient-breeze-pass {
+    0% { transform: translateX(-3px) scaleX(0.96); opacity: 0.1; }
+    100% { transform: translateX(8px) scaleX(1.04); opacity: 0.22; }
+}
+
+/* Keep the interaction layer above every decorative motion layer. */
+.land {
+    z-index: 5;
+}
+
+@media (max-width: 700px) {
+    .ambient-wave-three,
+    .ambient-wave-four,
+    .ambient-bird-two,
+    .ambient-breeze-three {
+        display: none;
+    }
+
+    .ambient-cloud {
+        opacity: 0.09;
+    }
+
+    .ambient-boat {
+        opacity: 0.42;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ambient-motion * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .ambient-motion {
+        opacity: 0.65;
+    }
+}
+
+/* Selected vegetation receives only a moving light/air pass.
+   The underlying trees and plants remain the original pixels. */
+.ambient-plant {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.015);
+    -webkit-backdrop-filter: brightness(1.025) saturate(1.02);
+    backdrop-filter: brightness(1.025) saturate(1.02);
+    opacity: 0.55;
+    will-change: transform;
+    animation: ambient-plant-sway 6.5s ease-in-out infinite alternate;
+}
+
+.ambient-plant-one { left: 14%; top: 28%; width: 7%; height: 13%; animation-duration: 6.2s; animation-delay: -2.1s; transform-origin: 55% 90%; }
+.ambient-plant-two { left: 73%; top: 19%; width: 8%; height: 13%; animation-duration: 7.4s; animation-delay: -4.8s; transform-origin: 45% 92%; animation-direction: alternate-reverse; }
+.ambient-plant-three { left: 22%; top: 60%; width: 8%; height: 13%; animation-duration: 5.7s; animation-delay: -3.6s; transform-origin: 52% 94%; }
+.ambient-plant-four { left: 72%; top: 61%; width: 7%; height: 12%; animation-duration: 6.9s; animation-delay: -5.2s; transform-origin: 48% 92%; animation-direction: alternate-reverse; }
+
+@keyframes ambient-plant-sway {
+    0% { transform: rotate(-0.35deg) translateY(0); }
+    100% { transform: rotate(0.35deg) translateY(-0.5px); }
+}
+
+@media (max-width: 700px) {
+    .ambient-plant-three,
+    .ambient-plant-four {
+        display: none;
+    }
+}
+
+/* ==================================================
+   GAME-LIKE DYNAMIC ENVIRONMENT (纯CSS游戏感动态)
+   ================================================== */
+
+/* 1. 核心：修复层级，让所有特效浮在背景图之上，但又不挡住点击 */
+.island {
+    position: relative;
+    overflow: hidden; /* 防止波浪溢出圆角 */
+}
+
+.environment-motion {
+    position: absolute;
+    inset: 0;
+    z-index: 10; /* 必须高于 .island-map 的 z-index (通常是默认值或1) */
+    pointer-events: none; /* 关键：让鼠标穿透特效层，能点到下面的按钮 */
+}
+
+/* 2. 海洋涨潮与波动特效层 */
+/* 我们利用 CSS 创建一个波浪纹路，叠在底部的海洋区域 */
+.tide-layer {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 200%; /* 宽一点，方便左右移动 */
+    height: 35%; /* 覆盖底部的海洋区域，大约35%高度 */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ffffff' fill-opacity='0.3'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 50% 100%; /* 波浪大小 */
+    background-repeat: repeat-x;
+    animation: tideFlow 8s linear infinite;
+    z-index: 2;
+    pointer-events: none;
+    /* 边缘羽化，让波浪和背景图完美融合，不突兀 */
+    -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
+    mask-image: linear-gradient(to top, black 40%, transparent 100%);
+}
+
+/* 涨潮波浪动画：左右循环移动，模拟涌动 */
+@keyframes tideFlow {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* 3. 云、鸟、船、飘动特效 (需要你有对应的透明PNG素材放在 assets/motion/ 下) */
+.motion-cloud,
+.motion-birds,
+.motion-boat {
+    position: absolute;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    will-change: transform;
+    z-index: 5;
+}
+
+/* 云朵漂浮（左右来回飘） */
+.motion-cloud-left {
+    left: 0; top: 5%;
+    width: 15%; aspect-ratio: 2/1;
+    background-image: url("assets/motion/cloud-left.png"); /* 需替换为你的透明云朵图 */
+    animation: floatCloud 20s ease-in-out infinite alternate;
+}
+.motion-cloud-right {
+    right: 0; top: 8%;
+    width: 15%; aspect-ratio: 2/1;
+    background-image: url("assets/motion/cloud-right.png");
+    animation: floatCloud 25s ease-in-out infinite alternate-reverse;
+}
+@keyframes floatCloud {
+    from { transform: translateX(-20px) translateY(0); }
+    to { transform: translateX(40px) translateY(-10px); }
+}
+
+/* 小鸟飞翔 */
+.motion-birds {
+    left: 80%; top: 10%;
+    width: 8%; aspect-ratio: 2/1;
+    background-image: url("assets/motion/birds.png");
+    animation: flyBirds 15s linear infinite;
+}
+@keyframes flyBirds {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-100px, -30px) scale(0.8); }
+    100% { transform: translate(-200px, 10px) scale(1); }
+}
+
+/* 小船漂浮（上下浮动+轻微摇摆） */
+.motion-boat {
+    left: 5%; bottom: 15%;
+    width: 8%; aspect-ratio: 1/1;
+    background-image: url("assets/motion/boat.png");
+    transform-origin: bottom center;
+    animation: sailBoat 6s ease-in-out infinite alternate;
+}
+@keyframes sailBoat {
+    0% { transform: rotate(-3deg) translateY(0); }
+    100% { transform: rotate(3deg) translateY(-8px); }
+}
+

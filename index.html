@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grace Yang's  | Career Island</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         Navigation
+         ========================= -->
+
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            Grace Yang's
+        </a>
+
+        <div class="site-title" data-i18n="siteTitle">
+            CAREER ISLAND
+        </div>
+
+        <nav>
+
+            <a href="#island" data-i18n="navExplore">
+                Explore
+            </a>
+
+            <a href="#contact" data-i18n="navContact">
+                Contact
+            </a>
+
+            <!-- Language Switcher -->
+
+            <div class="language-switcher" aria-label="Language selector">
+
+                <button
+                    class="language-button active"
+                    data-language="en"
+                    type="button"
+                >
+                    EN
+                </button>
+
+                <span class="language-divider">|</span>
+
+                <button
+                    class="language-button"
+                    data-language="zh"
+                    type="button"
+                >
+                    中
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main id="home">
+
+        <!-- =========================
+             Island Introduction
+             ========================= -->
+
+        <section class="island-section" id="island">
+
+            <div class="island-intro">
+
+                <p class="eyebrow" data-i18n="welcome">
+                    WELCOME TO
+                </p>
+
+                <h1 data-i18n="careerIsland">
+                    My Career Island
+                </h1>
+
+                <p data-i18n="islandDescription">
+                    A visual map of my journey across
+                    AI, data, product, and technology.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 Career Island
+                 ========================= -->
+
+            <div class="island">
+
+                <img
+                    class="island-map"
+                    src="assets/career-island-map.jpg"
+                    alt=""
+                    width="1600"
+                    height="900"
+                >
+
+                <!-- Ambient environmental motion only. The island illustration itself remains untouched. -->
+                <div class="ambient-motion" aria-hidden="true">
+                    <span class="ambient-wave ambient-wave-one"></span>
+                    <span class="ambient-wave ambient-wave-two"></span>
+                    <span class="ambient-wave ambient-wave-three"></span>
+                    <span class="ambient-wave ambient-wave-four"></span>
+
+                    <span class="ambient-cloud ambient-cloud-one"></span>
+                    <span class="ambient-cloud ambient-cloud-two"></span>
+
+                    <span class="ambient-bird ambient-bird-one">⌁</span>
+                    <span class="ambient-bird ambient-bird-two">⌁</span>
+
+                    <span class="ambient-boat ambient-boat-left"></span>
+                    <span class="ambient-boat ambient-boat-right"></span>
+
+                    <span class="ambient-breeze ambient-breeze-one"></span>
+                    <span class="ambient-breeze ambient-breeze-two"></span>
+                    <span class="ambient-breeze ambient-breeze-three"></span>
+
+                    <span class="ambient-plant ambient-plant-one"></span>
+                    <span class="ambient-plant ambient-plant-two"></span>
+                    <span class="ambient-plant ambient-plant-three"></span>
+                    <span class="ambient-plant ambient-plant-four"></span>
+                </div>
+
+                <div class="land">
+
+                    <!-- Transparent hotspots over the buildings already drawn in the island illustration. -->
+
+                    <button
+                        class="building about-house"
+                        type="button"
+                        aria-label="ABOUT ME"
+                        aria-controls="aboutMeModal"
+                    ></button>
+
+                    <button
+                        class="building ai-lab"
+                        type="button"
+                        aria-label="AI PROJECTS"
+                    ></button>
+
+                    <button
+                        class="building experience-house"
+                        type="button"
+                        aria-label="EXPERIENCE"
+                    ></button>
+
+                    <div
+                        class="side-projects side-projects-trigger"
+                        role="button"
+                        tabindex="0"
+                        aria-label="SIDE PROJECTS"
+                        aria-controls="sideProjectsModal"
+                        aria-haspopup="dialog"
+                    ></div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             Contact
+             ========================= -->
+
+        <section
+            class="contact-section"
+            id="contact"
+        >
+
+            <div class="contact-content">
+
+                <p
+                    class="eyebrow"
+                    data-i18n="keepInTouch"
+                >
+                    KEEP IN TOUCH
+                </p>
+
+                <h2 data-i18n="letsConnect">
+                    Let's connect.
+                </h2>
+
+                <p data-i18n="contactDescription">
+                    Interested in AI, data, product, or building
+                    something interesting together?
+                </p>
+
+
+                <div class="contact-links">
+
+                    <a
+                        href="https://github.com/graceyang0301-bit"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n="github"
+                    >
+                        GitHub
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/grace-yang-1a52643b5/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n="linkedin"
+                    >
+                        LinkedIn
+                    </a>
+
+                    <a
+                        href="Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n="resume"
+                    >
+                        Resume
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             AI LAB PROJECT PANEL
+             ========================= -->
+
+        <div class="ai-modal" id="aiLabModal" aria-hidden="true">
+
+            <div class="ai-modal-backdrop" data-close-ai-lab></div>
+
+            <section
+                class="ai-modal-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="aiLabTitle"
+            >
+
+                <button
+                    class="ai-modal-close"
+                    type="button"
+                    aria-label="Close AI Lab"
+                    data-close-ai-lab
+                >
+                    ×
+                </button>
+
+                <div class="ai-modal-header">
+                    <p class="ai-modal-eyebrow" data-i18n="aiModalEyebrow">
+                        AI / ML PROJECTS
+                    </p>
+
+                    <h2 id="aiLabTitle" data-i18n="aiModalTitle">
+                        AI LAB
+                    </h2>
+
+                    <p data-i18n="aiModalDescription">
+                        A collection of my AI / ML projects.
+                    </p>
+                </div>
+
+                <div class="ai-project-list">
+
+                    <button
+                        class="ai-project-card ai-project-card-clickable"
+                        type="button"
+                        data-project="uber"
+                    >
+                        <span class="ai-project-number">01</span>
+                        <span class="ai-project-content">
+                            <span class="ai-project-title" data-i18n="uberTitle">
+                                Uber User Feedback Multi-class Classification
+                            </span>
+                            <span class="ai-project-tech" data-i18n="uberTech">
+                                NLP · Python · Scikit-learn
+                            </span>
+                            <span class="ai-project-result" data-i18n="uberResultShort">
+                                Macro F1: 0.8518
+                            </span>
+                        </span>
+                        <span class="ai-project-arrow" aria-hidden="true">→</span>
+                    </button>
+
+                    <button
+                        class="ai-project-card ai-project-card-clickable"
+                        type="button"
+                        data-project="fraud"
+                    >
+                        <span class="ai-project-number">02</span>
+                        <span class="ai-project-content">
+                            <span class="ai-project-title" data-i18n="fraudTitle">
+                                Real-time Credit Card Fraud Detection
+                            </span>
+                            <span class="ai-project-tech" data-i18n="fraudTech">
+                                XGBoost · Isolation Forest
+                            </span>
+                        </span>
+                        <span class="ai-project-arrow" aria-hidden="true">→</span>
+                    </button>
+
+                    <button
+                        class="ai-project-card ai-project-card-clickable"
+                        type="button"
+                        data-project="paper"
+                    >
+                        <span class="ai-project-number">03</span>
+                        <span class="ai-project-content">
+                            <span class="ai-project-title" data-i18n="paperTitle">
+                                LLM-based Academic Paper Evaluation
+                            </span>
+                            <span class="ai-project-tech" data-i18n="paperTech">
+                                Transformers · ROUGE
+                            </span>
+                        </span>
+                        <span class="ai-project-arrow" aria-hidden="true">→</span>
+                    </button>
+
+                    <button
+                        class="ai-project-card ai-project-card-clickable"
+                        type="button"
+                        data-project="project-04"
+                    >
+                        <span class="ai-project-number">04</span>
+                        <span class="ai-project-content">
+                            <span class="ai-project-title" data-i18n="fakeNewsTitle">
+                                Fake News Detection
+                            </span>
+                            <span class="ai-project-tech" data-i18n="fakeNewsTech">
+                                NLP · Classification
+                            </span>
+                        </span>
+                        <span class="ai-project-arrow" aria-hidden="true">→</span>
+                    </button>
+
+                    <button
+                        class="ai-project-card ai-project-card-clickable"
+                        type="button"
+                        data-project="project-05"
+                    >
+                        <span class="ai-project-number">05</span>
+                        <span class="ai-project-content">
+                            <span class="ai-project-title" data-i18n="vitTitle">
+                                Lightweight ViT Object Detection Research
+                            </span>
+                            <span class="ai-project-tech" data-i18n="vitTech">
+                                ViT · Computer Vision
+                            </span>
+                        </span>
+                        <span class="ai-project-arrow" aria-hidden="true">→</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             UBER CASE STUDY
+             ========================= -->
+
+        <div class="case-study-modal" id="uberCaseStudyModal" aria-hidden="true">
+
+            <div class="case-study-backdrop" data-close-case-study></div>
+
+            <section
+                class="case-study-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="caseStudyTitle"
+            >
+
+                <button
+                    class="case-study-close"
+                    type="button"
+                    aria-label="Close case study"
+                    data-close-case-study
+                >
+                    ×
+                </button>
+
+                <button
+                    class="case-study-back-button"
+                    type="button"
+                    data-back-to-ai-from-case-study
+                >
+                    <span aria-hidden="true">←</span>
+                    <span data-i18n="backToAiLab">
+                        Back to AI Lab
+                    </span>
+                </button>
+
+                <header class="case-study-header">
+                    <p class="case-study-eyebrow" data-i18n="caseStudyEyebrow">
+                        CASE STUDY
+                    </p>
+
+                    <h2 id="caseStudyTitle" data-i18n="caseStudyTitle">
+                        Uber User Feedback
+                        Multi-class Classification
+                    </h2>
+
+                    <p class="case-study-subtitle" data-i18n="caseStudySubtitle">
+                        NLP · Machine Learning · Python
+                    </p>
+                </header>
+
+
+                <!-- SECTION 01 -->
+
+                <section class="case-study-section">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">01</span>
+
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+
+                            <h3 data-i18n="projectOverviewTitle">
+                                Project Overview
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="case-study-overview-copy">
+
+                        <p data-i18n="overviewIntro">
+                            This project built a multi-class text classification system
+                            for large-scale Uber user feedback.
+                        </p>
+
+                        <p data-i18n="overviewApproach">
+                            Using TF-IDF and Word N-gram features, we developed a
+                            Gradient Boosting Tree (GBT) model to classify user feedback
+                            into five intent categories, including complaints,
+                            suggestions, and praise.
+                        </p>
+
+                        <div class="case-study-challenge">
+                            <span data-i18n="challengeLabel">Challenge</span>
+
+                            <p data-i18n="challengeText">
+                                How can large volumes of user feedback be automatically
+                                categorized to support more efficient user feedback analysis?
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="case-study-workflow" aria-label="Project workflow">
+
+                        <div class="workflow-step">
+                            <span class="workflow-number">01</span>
+                            <strong data-i18n="workflowReviews">User Reviews</strong>
+                        </div>
+
+                        <span class="workflow-arrow" aria-hidden="true">↓</span>
+
+                        <div class="workflow-step">
+                            <span class="workflow-number">02</span>
+                            <strong data-i18n="workflowPreprocessing">Text Preprocessing</strong>
+                        </div>
+
+                        <span class="workflow-arrow" aria-hidden="true">↓</span>
+
+                        <div class="workflow-step">
+                            <span class="workflow-number">03</span>
+                            <strong data-i18n="workflowFeatures">TF-IDF + Word N-gram</strong>
+                        </div>
+
+                        <span class="workflow-arrow" aria-hidden="true">↓</span>
+
+                        <div class="workflow-step">
+                            <span class="workflow-number">04</span>
+                            <strong data-i18n="workflowModel">GBT Model</strong>
+                        </div>
+
+                        <span class="workflow-arrow" aria-hidden="true">↓</span>
+
+                        <div class="workflow-step workflow-step-final">
+                            <span class="workflow-number">05</span>
+                            <strong data-i18n="workflowCategories">5 Intent Categories</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SECTION 02 -->
+
+                <section class="case-study-section">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">02</span>
+
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+
+                            <h3 data-i18n="myRoleTitle">
+                                My Role
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="case-study-role-card">
+
+                        <p class="case-study-role-subtitle" data-i18n="myRoleSubtitle">
+                            Modeling & Feature Engineering
+                        </p>
+
+                        <ul>
+                            <li data-i18n="roleBullet1">
+                                Participated in the model development process
+                            </li>
+
+                            <li data-i18n="roleBullet2">
+                                Worked with TF-IDF + Word N-gram features
+                            </li>
+
+                            <li data-i18n="roleBullet3">
+                                Built the Gradient Boosting Tree (GBT) classification model
+                            </li>
+
+                            <li data-i18n="roleBullet4">
+                                Contributed to model evaluation and performance comparison
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SECTION 03 -->
+
+                <section class="case-study-section case-study-results">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">03</span>
+
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+
+                            <h3 data-i18n="resultsTitle">
+                                Results
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="results-card">
+
+                        <p class="results-label" data-i18n="macroF1Label">
+                            Macro F1 Score
+                        </p>
+
+                        <div class="results-number">
+                            0.8518
+                        </div>
+
+                        <div class="results-improvement">
+                            +12%
+                            <span data-i18n="vsLightgbm">
+                                vs. LightGBM baseline
+                            </span>
+                        </div>
+
+                        <p class="results-explanation" data-i18n="resultsExplanation">
+                            The final model improved performance by 12% compared with
+                            the LightGBM baseline, demonstrating the effectiveness of
+                            the feature-based approach for large-scale user feedback
+                            classification.
+                        </p>
+
+                    </div>
+
+                    <div class="case-study-notebook">
+
+                        <div>
+                            <p class="notebook-label" data-i18n="projectNotebookLabel">
+                                Project Notebook
+                            </p>
+
+                            <p class="notebook-description" data-i18n="projectNotebookDescription">
+                                View the project notebook on Google Colab.
+                            </p>
+                        </div>
+
+                        <a
+                            class="notebook-button"
+                            href="https://colab.research.google.com/drive/1LozzRJj0CQe4hKbEfTV8fe5E7LJxEyc2?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span data-i18n="viewColabNotebook">
+                                View Colab Notebook →
+                            </span>
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SECTION 04 -->
+
+                <section class="case-study-section case-study-learning">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">04</span>
+
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+
+                            <h3 data-i18n="whatLearnedTitle">
+                                What I've Learned
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="learning-grid">
+
+                        <article class="learning-card">
+
+                            <p class="learning-card-label" data-i18n="whatLearnedLabel">
+                                What I've learned
+                            </p>
+
+                            <p data-i18n="whatLearnedText">
+                                I learned that feature engineering and data quality can be
+                                more critical than algorithm selection in text classification.
+                                Proper baseline setup and objective metrics such as Macro F1
+                                are also important for evaluating model performance reliably.
+                            </p>
+
+                        </article>
+
+
+                        <article class="learning-card">
+
+                            <p class="learning-card-label" data-i18n="whatSurprisedLabel">
+                                What surprised me
+                            </p>
+
+                            <p data-i18n="whatSurprisedText">
+                                I was surprised that combining TF-IDF with Word N-gram brought
+                                more performance gains than simply switching models. Small
+                                changes in feature representation can have a significant impact
+                                on classification results.
+                            </p>
+
+                        </article>
+
+
+                        <article class="learning-card">
+
+                            <p class="learning-card-label" data-i18n="whatImproveLabel">
+                                What I would improve next
+                            </p>
+
+                            <p data-i18n="whatImproveText">
+                                Next, I would explore pre-trained language models for better
+                                semantic understanding and conduct deeper analysis of
+                                misclassified samples to further improve the dataset and model.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <div class="case-study-footer">
+                    <button
+                        class="case-study-back-button"
+                        type="button"
+                        data-back-to-ai-from-case-study
+                    >
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToAiLab">
+                            Back to AI Lab
+                        </span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             LLM ACADEMIC PAPER EVALUATION CASE STUDY
+             ========================= -->
+
+        <div class="case-study-modal" id="paperCaseStudyModal" aria-hidden="true">
+
+            <div class="case-study-backdrop" data-close-paper-case-study></div>
+
+            <section
+                class="case-study-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="paperCaseStudyTitle"
+            >
+
+                <button
+                    class="case-study-close"
+                    type="button"
+                    aria-label="Close case study"
+                    data-close-paper-case-study
+                >
+                    ×
+                </button>
+
+                <button
+                    class="case-study-back-button"
+                    type="button"
+                    data-back-to-ai-from-paper-case-study
+                >
+                    <span aria-hidden="true">←</span>
+                    <span data-i18n="backToAiLab">
+                        Back to AI Lab
+                    </span>
+                </button>
+
+                <header class="case-study-header">
+                    <p class="case-study-eyebrow" data-i18n="paperCaseStudyEyebrow">
+                        AI / ML PROJECT
+                    </p>
+
+                    <h2 id="paperCaseStudyTitle" data-i18n="paperCaseStudyTitle">
+                        LLM-based Academic Paper Evaluation
+                    </h2>
+
+                    <p class="case-study-subtitle" data-i18n="paperCaseStudySubtitle">
+                        LLM · NLP · Prompt Engineering
+                    </p>
+                </header>
+
+                <!-- SECTION 01 -->
+                <section class="case-study-section">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">01</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+                            <h3 data-i18n="paperOverviewTitle">
+                                Project Overview
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="case-study-overview-copy">
+                        <p data-i18n="paperOverviewIntro">
+                            This project developed an LLM-based academic paper evaluation system to address the low efficiency, subjectivity, and high cost of traditional manual paper review.
+                        </p>
+
+                        <p data-i18n="paperOverviewApproach">
+                            Based on an open-source academic paper dataset, the project structured and processed paper abstracts, main texts, and keywords, while applying prompt engineering and model fine-tuning to adapt LLMs to the academic evaluation scenario.
+                        </p>
+
+                        <p data-i18n="paperOverviewEvaluation">
+                            The system evaluates papers across multiple dimensions, including originality, completeness, logical coherence, and academic value, and generates standardized scores and evaluations.
+                        </p>
+
+                        <p data-i18n="paperOverviewComparison">
+                            The project also compared the LLM-based approach with traditional text-based models to explore its effectiveness and generalization in automated academic assessment.
+                        </p>
+                    </div>
+
+                </section>
+
+                <!-- SECTION 02 -->
+                <section class="case-study-section">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">02</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+                            <h3 data-i18n="paperRoleTitle">
+                                My Role
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="case-study-role-card">
+                        <p class="case-study-role-subtitle" data-i18n="paperRoleSubtitle">
+                            Team Leader · Project Coordination
+                        </p>
+
+                        <p data-i18n="paperRoleIntro">
+                            As the team leader, I was responsible for organizing the project workflow, coordinating team members, and facilitating the development of the LLM-based academic paper evaluation system.
+                        </p>
+
+                        <p data-i18n="paperRoleDetails">
+                            I helped coordinate the implementation of different project components and ensured that the final work was integrated into a complete evaluation system.
+                        </p>
+                    </div>
+
+                    <div class="paper-role-grid">
+                        <div class="paper-role-mini-card">
+                            <span class="paper-role-mini-label" data-i18n="paperRoleFocusLabel">TEAM ROLE</span>
+                            <strong data-i18n="paperRoleFocusRole">Team Leader</strong>
+                        </div>
+                        <div class="paper-role-mini-card">
+                            <span class="paper-role-mini-label" data-i18n="paperRoleFocusLabel2">FOCUS</span>
+                            <strong data-i18n="paperRoleFocus">Project Coordination · System Development · LLM Application</strong>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- SECTION 03 -->
+                <section class="case-study-section case-study-results">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">03</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+                            <h3 data-i18n="paperResultsTitle">
+                                Result
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="results-card paper-results-card">
+                        <p class="results-label" data-i18n="paperResultLabel">
+                            Result
+                        </p>
+
+                        <div class="fraud-result-title" data-i18n="paperResultHeadline">
+                            LLM-based Academic Paper Evaluation System
+                        </div>
+
+                        <p class="results-explanation" data-i18n="paperResultText">
+                            Developed a complete prototype system for automated academic paper evaluation, supporting multi-dimensional assessment and standardized evaluation output.
+                        </p>
+
+                        <div class="paper-result-grid">
+                            <div class="paper-result-item">
+                                <strong data-i18n="paperResultItem1Title">Automated Evaluation</strong>
+                                <span data-i18n="paperResultItem1Text">Automated assessment of academic papers</span>
+                            </div>
+                            <div class="paper-result-item">
+                                <strong data-i18n="paperResultItem2Title">Multi-dimensional Scoring</strong>
+                                <span data-i18n="paperResultItem2Text">Evaluation across multiple academic dimensions</span>
+                            </div>
+                            <div class="paper-result-item">
+                                <strong data-i18n="paperResultItem3Title">System Prototype</strong>
+                                <span data-i18n="paperResultItem3Text">Integrated the project into a complete working system</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-study-notebook">
+                        <div>
+                            <p class="notebook-label" data-i18n="paperGithubLabel">
+                                Project Link
+                            </p>
+                            <p class="notebook-description" data-i18n="paperGithubDescription">
+                                View the project repository on GitHub.
+                            </p>
+                        </div>
+
+                        <a
+                            class="notebook-button"
+                            href="https://github.com/graceyang0301-bit/LLM-group-project"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span data-i18n="viewGithub">
+                                GitHub →
+                            </span>
+                        </a>
+                    </div>
+
+                </section>
+
+                <!-- SECTION 04 -->
+                <section class="case-study-section case-study-learning">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">04</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+                            <h3 data-i18n="paperLearningTitle">
+                                What I've Learned
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="learning-grid">
+                        <article class="learning-card">
+                            <p class="learning-card-label" data-i18n="paperWhatLearnedLabel">
+                                What I've learned
+                            </p>
+                            <p data-i18n="paperWhatLearnedText">
+                                I learned that building an LLM application requires more than simply selecting a powerful model. Data structure, prompt design, evaluation criteria, and system integration all have a significant impact on the final application.
+                            </p>
+                        </article>
+
+                        <article class="learning-card">
+                            <p class="learning-card-label" data-i18n="paperWhatSurprisedLabel">
+                                What surprised me
+                            </p>
+                            <p data-i18n="paperWhatSurprisedText">
+                                I was surprised by how much prompt design and task formulation can influence the consistency and usefulness of LLM-generated evaluations.
+                            </p>
+                        </article>
+
+                        <article class="learning-card">
+                            <p class="learning-card-label" data-i18n="paperWhatImproveLabel">
+                                What I would improve next
+                            </p>
+                            <p data-i18n="paperWhatImproveText">
+                                Next, I would explore more systematic evaluation methods and experiment with different prompting and fine-tuning strategies to improve the reliability and consistency of automated academic assessment.
+                            </p>
+                        </article>
+                    </div>
+
+                </section>
+
+                <div class="case-study-footer">
+                    <button
+                        class="case-study-back-button"
+                        type="button"
+                        data-back-to-ai-from-paper-case-study
+                    >
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToAiLab">
+                            Back to AI Lab
+                        </span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             FRAUD DETECTION CASE STUDY
+             ========================= -->
+
+        <div class="case-study-modal" id="fraudCaseStudyModal" aria-hidden="true">
+
+            <div class="case-study-backdrop" data-close-fraud-case-study></div>
+
+            <section
+                class="case-study-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="fraudCaseStudyTitle"
+            >
+
+                <button
+                    class="case-study-close"
+                    type="button"
+                    aria-label="Close case study"
+                    data-close-fraud-case-study
+                >
+                    ×
+                </button>
+
+                <button
+                    class="case-study-back-button"
+                    type="button"
+                    data-back-to-ai-from-fraud-case-study
+                >
+                    <span aria-hidden="true">←</span>
+                    <span data-i18n="backToAiLab">
+                        Back to AI Lab
+                    </span>
+                </button>
+
+                <header class="case-study-header">
+                    <p class="case-study-eyebrow" data-i18n="fraudCaseStudyEyebrow">
+                        AI LAB · PROJECT
+                    </p>
+
+                    <h2 id="fraudCaseStudyTitle" data-i18n="fraudCaseStudyTitle">
+                        Real-time Credit Card Fraud Detection
+                    </h2>
+
+                    <p class="case-study-subtitle" data-i18n="fraudCaseStudySubtitle">
+                        Machine Learning · Fraud Detection · Python
+                    </p>
+                </header>
+
+
+                <!-- SECTION 01 -->
+
+                <section class="case-study-section">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">01</span>
+
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+
+                            <h3 data-i18n="fraudOverviewTitle">
+                                Project Overview
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="case-study-overview-copy">
+
+                        <p data-i18n="fraudOverviewIntro">
+                            This project built a credit card fraud detection system for financial transaction scenarios, addressing challenges including severe class imbalance, hidden fraudulent patterns, and low manual review efficiency.
+                        </p>
+
+                        <p data-i18n="fraudOverviewApproach">
+                            Based on a large-scale anonymized credit card transaction dataset, the project involved outlier handling, sample balancing, feature selection, and data normalization. Machine learning classification models were then developed to distinguish legitimate transactions from fraudulent ones.
+                        </p>
+
+                        <p data-i18n="fraudOverviewResult">
+                            Through model comparison and parameter tuning, the system improved the identification of fraudulent transactions and supported intelligent risk detection and real-time transaction risk alerts.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SECTION 02 -->
+
+                <section class="case-study-section">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">02</span>
+
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+
+                            <h3 data-i18n="fraudRoleTitle">
+                                My Role
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="case-study-role-card">
+
+                        <p data-i18n="fraudRoleIntro">
+                            My main contribution focused on exploratory data analysis and data visualization.
+                        </p>
+
+                        <p data-i18n="fraudRoleDetails">
+                            I analyzed the transaction dataset using various visualization techniques, including box plots, heatmaps, histograms, and other exploratory charts to examine feature distributions, correlations, outliers, and potential patterns related to fraudulent transactions.
+                        </p>
+
+                        <p data-i18n="fraudRoleImpact">
+                            These visual analyses helped the team better understand the dataset and supported subsequent feature selection and modeling decisions.
+                        </p>
+
+                        <div class="case-study-tag-row" aria-label="Visualization methods">
+                            <span class="case-study-tag">Box Plot</span>
+                            <span class="case-study-tag">Heatmap</span>
+                            <span class="case-study-tag">Histogram</span>
+                            <span class="case-study-tag">EDA</span>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SECTION 03 -->
+
+                <section class="case-study-section case-study-results">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">03</span>
+
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+
+                            <h3 data-i18n="fraudResultsTitle">
+                                Result
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="results-card fraud-results-card">
+
+                        <p class="results-label" data-i18n="fraudResultLabel">
+                            Detection Outcome
+                        </p>
+
+                        <div class="fraud-result-title" data-i18n="fraudResultHeadline">
+                            Improved Fraud Detection
+                        </div>
+
+                        <div class="case-study-tag-row">
+                            <span class="case-study-tag">Machine Learning</span>
+                            <span class="case-study-tag">Risk Detection</span>
+                            <span class="case-study-tag">EDA</span>
+                        </div>
+
+                        <p class="results-explanation" data-i18n="fraudResultText">
+                            The final modeling process improved the identification of fraudulent transactions and provided a more effective approach for detecting abnormal transaction patterns.
+                        </p>
+
+                        <p class="results-explanation" data-i18n="fraudResultText2">
+                            The project demonstrated how data preprocessing, visualization, feature engineering, and model tuning can work together in a financial fraud detection pipeline.
+                        </p>
+
+                    </div>
+
+                    <div class="case-study-notebook">
+
+                        <div>
+                            <p class="notebook-label" data-i18n="fraudGithubLabel">
+                                Project Repository
+                            </p>
+
+                            <p class="notebook-description" data-i18n="fraudGithubDescription">
+                                View the project repository on GitHub.
+                            </p>
+                        </div>
+
+                        <a
+                            class="notebook-button"
+                            href="https://github.com/justusyyr/Group-Assignment---Lays"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <span data-i18n="viewGithub">
+                                View on GitHub →
+                            </span>
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SECTION 04 -->
+
+                <section class="case-study-section case-study-learning">
+
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">04</span>
+
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">
+                                PROJECT
+                            </p>
+
+                            <h3 data-i18n="fraudLearningTitle">
+                                What I've Learned
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="learning-grid">
+
+                        <article class="learning-card">
+
+                            <p class="learning-card-label" data-i18n="fraudWhatLearnedLabel">
+                                What I've learned
+                            </p>
+
+                            <p data-i18n="fraudWhatLearnedText">
+                                I learned that data quality and exploratory analysis are especially important in fraud detection, where fraudulent transactions are often rare and difficult to identify.
+                            </p>
+
+                        </article>
+
+                        <article class="learning-card">
+
+                            <p class="learning-card-label" data-i18n="fraudWhatSurprisedLabel">
+                                What surprised me
+                            </p>
+
+                            <p data-i18n="fraudWhatSurprisedText">
+                                I was surprised by how strongly class imbalance and feature distributions can affect the modeling process. Visualization made it easier to identify unusual patterns and understand the characteristics of fraudulent transactions.
+                            </p>
+
+                        </article>
+
+                        <article class="learning-card">
+
+                            <p class="learning-card-label" data-i18n="fraudWhatImproveLabel">
+                                What I would improve next
+                            </p>
+
+                            <p data-i18n="fraudWhatImproveText">
+                                Next time, I would explore more advanced anomaly detection and ensemble methods, and evaluate the models using metrics such as precision, recall, F1-score, and ROC-AUC to better understand fraud detection performance.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <div class="case-study-footer">
+                    <button
+                        class="case-study-back-button"
+                        type="button"
+                        data-back-to-ai-from-fraud-case-study
+                    >
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToAiLab">
+                            Back to AI Lab
+                        </span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             FAKE NEWS DETECTION CASE STUDY
+             ========================= -->
+
+        <div class="case-study-modal" id="project04CaseStudyModal" aria-hidden="true">
+
+            <div class="case-study-backdrop" data-close-project-04></div>
+
+            <section
+                class="case-study-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="project04CaseStudyTitle"
+            >
+
+                <button
+                    class="case-study-close"
+                    type="button"
+                    aria-label="Close case study"
+                    data-close-project-04
+                >
+                    ×
+                </button>
+
+                <button
+                    class="case-study-back-button"
+                    type="button"
+                    data-back-to-ai-from-project-04
+                >
+                    <span aria-hidden="true">←</span>
+                    <span data-i18n="backToAiLab">Back to AI Lab</span>
+                </button>
+
+                <header class="case-study-header">
+                    <p class="case-study-eyebrow" data-i18n="project04Eyebrow">AI / ML PROJECT</p>
+                    <h2 id="project04CaseStudyTitle" data-i18n="project04Title">Fake News Detection</h2>
+                    <p class="case-study-subtitle" data-i18n="project04Subtitle">NLP · Text Classification · Machine Learning</p>
+                </header>
+
+                <!-- SECTION 01 -->
+                <section class="case-study-section">
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">01</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="project04OverviewTitle">Project Overview</h3>
+                        </div>
+                    </div>
+
+                    <div class="case-study-overview-copy">
+                        <p data-i18n="project04OverviewText">This project developed a fake news detection model to address the challenges of massive online news content, the rapid spread of misinformation, the high cost of manual verification, and the subjectivity of credibility assessment.</p>
+                        <p data-i18n="project04OverviewText2">Based on a large-scale news text dataset, the project performed data cleaning, noise removal, and text preprocessing, followed by the construction of a text feature system. Traditional machine learning and deep learning-based text classification models were compared to identify an effective modeling approach for binary classification of real and fake news.</p>
+                        <p data-i18n="project04OverviewText3">The project ultimately developed an automated detection solution to improve the efficiency of identifying misleading online content and provide intelligent support for content moderation, information verification, and online risk management.</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 02 -->
+                <section class="case-study-section">
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">02</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="project04RoleTitle">My Role</h3>
+                        </div>
+                    </div>
+
+                    <div class="case-study-role-card">
+                        <p class="case-study-role-subtitle" data-i18n="project04RoleSubtitle">Team Leader · EDA &amp; Project Coordination</p>
+                        <p data-i18n="project04RoleText">As the team leader, I was responsible for coordinating the overall project workflow, organizing task allocation, following up on project progress, and facilitating communication between team members to ensure the different project components were integrated into the final detection system.</p>
+                        <p data-i18n="project04RoleText2">I was also responsible for exploratory data analysis and visualization. Using box plots, word clouds, heatmaps, and other visualizations, I explored differences between real and fake news and identified textual characteristics such as shorter text length and a higher frequency of exclamation marks in fake news.</p>
+                        <p data-i18n="project04RoleText3">In addition, I contributed to NLP-based text preprocessing and feature engineering, including text cleaning and noise reduction, helping prepare the data for subsequent model development. I summarized the EDA findings and produced analytical reports to support the team's modeling decisions.</p>
+                    </div>
+                </section>
+
+                <!-- SECTION 03 -->
+                <section class="case-study-section case-study-results">
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">03</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="project04ResultsTitle">Result</h3>
+                        </div>
+                    </div>
+
+                    <div class="results-card fraud-results-card">
+                        <p class="results-label" data-i18n="project04ResultLabel">Result</p>
+                        <div class="fraud-result-title" data-i18n="project04ResultHeadline">Fake News Detection System</div>
+                        <div class="case-study-tag-row">
+                            <span class="case-study-tag" data-i18n="project04Tag1">Text Classification</span>
+                            <span class="case-study-tag" data-i18n="project04Tag2">Fake News Detection</span>
+                            <span class="case-study-tag" data-i18n="project04Tag3">NLP Application</span>
+                        </div>
+                        <p class="results-explanation" data-i18n="project04ResultText">Developed a fake news detection system for automated binary classification of real and fake news, integrating text preprocessing, feature engineering, exploratory analysis, and machine learning/deep learning-based modeling.</p>
+                    </div>
+
+                    <div class="case-study-notebook">
+                        <div>
+                            <p class="notebook-label" data-i18n="projectLinkLabel">Project Link</p>
+                            <p class="notebook-description" data-i18n="project04LinkDescription">GitHub — 525 Group Project</p>
+                        </div>
+                        <a class="notebook-button" href="https://github.com/graceyang0301-bit/525-group-project" target="_blank" rel="noopener noreferrer" data-i18n="project04GithubLink">GitHub — 525 Group Project</a>
+                    </div>
+                </section>
+
+                <!-- SECTION 04 -->
+                <section class="case-study-section case-study-learning">
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">04</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="project04LearningTitle">What I've Learned</h3>
+                        </div>
+                    </div>
+
+                    <div class="learning-grid">
+                        <article class="learning-card">
+                            <p class="learning-card-label" data-i18n="project04WhatLearnedLabel">What I've learned</p>
+                            <p data-i18n="project04WhatLearnedText">I learned that effective text classification depends not only on model selection, but also on data quality, preprocessing, and feature engineering. Careful EDA helped us better understand the characteristics of different types of news and provided a foundation for subsequent modeling.</p>
+                        </article>
+                        <article class="learning-card">
+                            <p class="learning-card-label" data-i18n="project04WhatSurprisedLabel">What surprised me</p>
+                            <p data-i18n="project04WhatSurprisedText">I was surprised by how much simple textual characteristics could reveal meaningful differences between real and fake news. Visualization made these patterns much easier to identify and communicate within the team.</p>
+                        </article>
+                        <article class="learning-card">
+                            <p class="learning-card-label" data-i18n="project04WhatImproveLabel">What I would improve next</p>
+                            <p data-i18n="project04WhatImproveText">I would explore more advanced NLP and LLM-based approaches to better capture the semantic and contextual information of news articles. I would also further investigate model interpretability to make the detection results easier to understand and evaluate.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <div class="case-study-footer">
+                    <button class="case-study-back-button" type="button" data-back-to-ai-from-project-04>
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToAiLab">Back to AI Lab</span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             LIGHTWEIGHT VIT OBJECT DETECTION RESEARCH CASE STUDY
+             ========================= -->
+
+        <div class="case-study-modal" id="project05CaseStudyModal" aria-hidden="true">
+
+            <div class="case-study-backdrop" data-close-project-05></div>
+
+            <section
+                class="case-study-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="project05CaseStudyTitle"
+            >
+
+                <button class="case-study-close" type="button" aria-label="Close case study" data-close-project-05>×</button>
+
+                <button class="case-study-back-button" type="button" data-back-to-ai-from-project-05>
+                    <span aria-hidden="true">←</span>
+                    <span data-i18n="backToAiLab">Back to AI Lab</span>
+                </button>
+
+                <header class="case-study-header">
+                    <p class="case-study-eyebrow" data-i18n="project05Eyebrow">AI / ML PROJECT</p>
+                    <h2 id="project05CaseStudyTitle" data-i18n="project05Title">Lightweight ViT Object Detection Research</h2>
+                    <p class="case-study-subtitle" data-i18n="project05Subtitle">ViT · Computer Vision</p>
+                </header>
+
+                <section class="case-study-section">
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">01</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="project05OverviewTitle">Project Overview</h3>
+                        </div>
+                    </div>
+                    <div class="case-study-overview-copy">
+                        <p data-i18n="project05OverviewText">This project focused on addressing the challenges of traditional object detection models, including large model size, slow inference speed, high deployment costs on embedded devices, and the difficulty of balancing detection accuracy with efficiency.</p>
+                        <p data-i18n="project05OverviewText2">Based on a lightweight Vision Transformer (ViT) architecture, the project developed an efficient object detection model for edge-side deployment. The Vision Transformer architecture was optimized through structural pruning, parameter reduction, and feature fusion improvements to reduce computational cost and model complexity.</p>
+                        <p data-i18n="project05OverviewText3">The project also incorporated dataset augmentation, hyperparameter tuning, and comparative experiments to improve model performance. The final approach aimed to maintain strong detection accuracy while improving inference efficiency, making it suitable for real-time object detection on mobile and embedded devices.</p>
+                    </div>
+                </section>
+
+                <section class="case-study-section">
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">02</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="project05RoleTitle">My Role</h3>
+                        </div>
+                    </div>
+                    <div class="case-study-role-card">
+                        <p class="case-study-role-subtitle" data-i18n="project05RoleSubtitle">Data Preparation &amp; Lightweight ViT Architecture Research</p>
+                        <p data-i18n="project05RoleText">I was responsible for dataset cleaning, annotation verification, and data augmentation to improve sample quality and distribution, helping enhance training stability and model generalization.</p>
+                        <p data-i18n="project05RoleText2">I also studied the structure of lightweight Vision Transformer backbones and contributed to simplifying and modifying traditional Transformer modules to reduce the number of model parameters and computational overhead.</p>
+                    </div>
+                </section>
+
+                <section class="case-study-section case-study-results">
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">03</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="project05ResultsTitle">Result</h3>
+                        </div>
+                    </div>
+                    <div class="results-card fraud-results-card project05-results-card">
+                        <p class="results-label" data-i18n="project05ResultLabel">Result</p>
+                        <div class="fraud-result-title" data-i18n="project05ResultHeadline">Lightweight ViT Object Detection Model</div>
+                        <p class="results-explanation" data-i18n="project05ResultText">The project applied knowledge distillation, iterative pruning, INT8 quantization, and TensorRT optimization to improve the efficiency of the lightweight object detection model. On the COCO-80 dataset, the best-performing model achieved an mAP@0.5 of 0.752. INT8 quantization reduced the model size from 22.1 MB to 5.8 MB, representing a 74% reduction in model size. After the combined optimization, overall inference speed increased by 5.5×, with an inference latency of 8 ms. The optimized model maintained strong detection accuracy with only a small decrease in overall precision, meeting the requirements for real-time object detection on edge devices.</p>
+                        <div class="project05-metrics" aria-label="Project 05 result highlights">
+                            <div class="project05-metric-card">
+                                <div class="project05-metric-value" data-i18n="project05Metric1Value">0.752</div>
+                                <div class="project05-metric-label" data-i18n="project05Metric1Label">mAP@0.5</div>
+                            </div>
+                            <div class="project05-metric-card">
+                                <div class="project05-metric-value" data-i18n="project05Metric2Value">74%</div>
+                                <div class="project05-metric-label" data-i18n="project05Metric2Label">Model Size Reduction</div>
+                                <div class="project05-metric-detail" data-i18n="project05Metric2Detail">22.1 MB → 5.8 MB</div>
+                            </div>
+                            <div class="project05-metric-card">
+                                <div class="project05-metric-value" data-i18n="project05Metric3Value">5.5×</div>
+                                <div class="project05-metric-label" data-i18n="project05Metric3Label">Inference Speed</div>
+                            </div>
+                            <div class="project05-metric-card">
+                                <div class="project05-metric-value" data-i18n="project05Metric4Value">8 ms</div>
+                                <div class="project05-metric-label" data-i18n="project05Metric4Label">Inference Latency</div>
+                            </div>
+                        </div>
+                        <div class="case-study-tag-row">
+                            <span class="case-study-tag" data-i18n="project05Tag1">Lightweight ViT</span>
+                            <span class="case-study-tag" data-i18n="project05Tag2">Object Detection</span>
+                            <span class="case-study-tag" data-i18n="project05Tag3">Edge AI</span>
+                        </div>
+                    </div>
+                    <div class="case-study-notebook">
+                        <div>
+                            <p class="notebook-label" data-i18n="projectLinkLabel">Project Link</p>
+                            <p class="notebook-description" data-i18n="project05LinkDescription">GitHub — Lightweight ViT Detection</p>
+                        </div>
+                        <a class="notebook-button" href="https://github.com/IR1SSS/lightweight_vit_detection" target="_blank" rel="noopener noreferrer" data-i18n="project05GithubLink">GitHub — Lightweight ViT Detection</a>
+                    </div>
+                </section>
+
+                <section class="case-study-section case-study-learning">
+                    <div class="case-study-section-heading">
+                        <span class="case-study-section-number">04</span>
+                        <div>
+                            <p class="case-study-section-kicker" data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="project05LearningTitle">What I've Learned</h3>
+                        </div>
+                    </div>
+                    <div class="learning-grid">
+                        <article class="learning-card">
+                            <p class="learning-card-label" data-i18n="project05WhatLearnedLabel">What I've learned</p>
+                            <p data-i18n="project05WhatLearnedText">I learned that building an efficient computer vision model requires balancing accuracy, model complexity, and inference efficiency rather than optimizing for accuracy alone. Dataset quality and augmentation also play an important role in improving model stability and generalization.</p>
+                        </article>
+                        <article class="learning-card">
+                            <p class="learning-card-label" data-i18n="project05WhatSurprisedLabel">What surprised me</p>
+                            <p data-i18n="project05WhatSurprisedText">I was surprised by how much the architecture of a Vision Transformer can be simplified while still maintaining useful representation capabilities. Small structural changes can have a meaningful impact on computational cost and deployment efficiency.</p>
+                        </article>
+                        <article class="learning-card">
+                            <p class="learning-card-label" data-i18n="project05WhatImproveLabel">What I would improve next</p>
+                            <p data-i18n="project05WhatImproveText">I would further explore more efficient attention mechanisms and lightweight model architectures, while conducting more systematic experiments on accuracy, inference speed, and model size across different edge devices.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <div class="case-study-footer">
+                    <button class="case-study-back-button" type="button" data-back-to-ai-from-project-05>
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToAiLab">Back to AI Lab</span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             SIDE PROJECTS DIRECTORY
+             ========================= -->
+
+        <div class="side-projects-modal" id="sideProjectsModal" aria-hidden="true">
+
+            <div class="side-projects-backdrop" data-close-side-projects></div>
+
+            <section
+                class="side-projects-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="sideProjectsPageTitle"
+            >
+
+                <button
+                    class="side-projects-close"
+                    type="button"
+                    aria-label="Close Side Projects"
+                    data-close-side-projects
+                >
+                    ×
+                </button>
+
+                <header class="side-projects-page-header">
+                    <p class="side-projects-page-eyebrow" data-i18n="sideProjectsPageEyebrow">
+                        SIDE PROJECTS
+                    </p>
+                    <h2 id="sideProjectsPageTitle" data-i18n="sideProjectsPageTitle">
+                        Products · Games · Experiments
+                    </h2>
+                    <p data-i18n="sideProjectsPageSubtitle">
+                        A collection of independent product experiments and creative builds.
+                    </p>
+                </header>
+
+                <div class="side-projects-directory-list">
+
+                    <button class="side-project-directory-card" type="button" data-side-project="side-project-01">
+                        <span class="side-project-directory-number">01</span>
+                        <span class="side-project-directory-content">
+                            <strong data-i18n="sideProject01Title">AI-driven End-to-End Product Development &amp; Promotion</strong>
+                            <span data-i18n="sideProject01ShortDescription">AI-assisted product development, user analysis, content creation, and go-to-market execution.</span>
+                            <span class="side-project-directory-tags" data-i18n="sideProject01Tags">AI Product · Product Design · AI-assisted Creation</span>
+                        </span>
+                        <span class="side-project-directory-action" data-i18n="viewProject">View Project</span>
+                    </button>
+
+                    <button class="side-project-directory-card" type="button" data-side-project="side-project-02">
+                        <span class="side-project-directory-number">02</span>
+                        <span class="side-project-directory-content">
+                            <strong data-i18n="sideProject02Title">Treasure Hunter</strong>
+                            <span data-i18n="sideProject02ShortDescription">An independently developed single-player game built with Python and Pygame.</span>
+                            <span class="side-project-directory-tags" data-i18n="sideProject02Tags">Python · Pygame · Game Development</span>
+                        </span>
+                        <span class="side-project-directory-action" data-i18n="viewProject">View Project</span>
+                    </button>
+
+                    <button class="side-project-directory-card" type="button" data-side-project="side-project-03">
+                        <span class="side-project-directory-number">03</span>
+                        <span class="side-project-directory-content">
+                            <strong data-i18n="sideProject03Title">Independent Product &amp; AI Advertising Creation</strong>
+                            <span data-i18n="sideProject03ShortDescription">An independent product development and creative practice connecting product design, concept development, and promotional advertising creation.</span>
+                            <span class="side-project-directory-tags" data-i18n="sideProject03Tags">AI Product · Product Design · AI-assisted Creation · Advertising</span>
+                        </span>
+                        <span class="side-project-directory-action" data-i18n="viewProject">View Project</span>
+                    </button>
+
+                </div>
+
+                <div class="side-projects-page-footer">
+                    <button class="side-projects-back-button" type="button" data-close-side-projects>
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToCareerIsland">Back to Career Island</span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             SIDE PROJECT 01 — AI-DRIVEN END-TO-END PRODUCT DEVELOPMENT & PROMOTION
+             ========================= -->
+
+        <div class="side-project-detail-modal" id="sideProject01Modal" aria-hidden="true">
+
+            <div class="side-project-detail-backdrop" data-close-side-project-01></div>
+
+            <section
+                class="side-project-detail-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="sideProject01Title"
+            >
+
+                <button class="side-project-detail-close" type="button" aria-label="Close project" data-close-side-project-01>×</button>
+
+                <button class="side-project-detail-back-button" type="button" data-back-to-side-projects-01>
+                    <span aria-hidden="true">←</span>
+                    <span data-i18n="backToSideProjects">Back to Side Projects</span>
+                </button>
+
+                <header class="side-project-detail-header">
+                    <p class="side-project-detail-eyebrow" data-i18n="sideProjectsPageEyebrow">SIDE PROJECTS</p>
+                    <h2 id="sideProject01Title" data-i18n="sideProject01Title">AI-driven End-to-End Product Development &amp; Promotion</h2>
+                    <p class="side-project-detail-subtitle" data-i18n="sideProject01Role">End-to-End Product Development &amp; AI-assisted Creation</p>
+                    <div class="side-project-detail-tags">
+                        <span data-i18n="sideProject01Tag1">AI Product</span>
+                        <span data-i18n="sideProject01Tag2">Product Design</span>
+                        <span data-i18n="sideProject01Tag3">AI-assisted Creation</span>
+                    </div>
+                </header>
+
+                <section class="side-project-detail-section">
+                    <div class="side-project-section-heading">
+                        <span>01</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectOverviewTitle">Project Overview</h3>
+                        </div>
+                    </div>
+                    <div class="side-project-copy">
+                        <p data-i18n="sideProject01Overview1">This project leveraged artificial intelligence to build an end-to-end product development and go-to-market framework, addressing challenges such as long product iteration cycles, limited alignment with user needs, fragmented promotion strategies, and unpredictable conversion performance.</p>
+                        <p data-i18n="sideProject01Overview2">By combining user data analysis, AI-powered content analysis, and intelligent modeling, the project established a complete workflow covering user research, product feature design, solution validation, and market-oriented promotion.</p>
+                        <p data-i18n="sideProject01Overview3">Through user profiling, optimization of core product features, and iterative refinement of promotion strategies, the project aimed to achieve more precise product positioning and more efficient market execution, improving both product iteration efficiency and promotional conversion effectiveness.</p>
+                    </div>
+                </section>
+
+                <section class="side-project-detail-section">
+                    <div class="side-project-section-heading">
+                        <span>02</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectRoleTitle">My Role</h3>
+                        </div>
+                    </div>
+                    <article class="side-project-role-card">
+                        <h4 data-i18n="sideProject01Role">End-to-End Product Development &amp; AI-assisted Creation</h4>
+                        <p data-i18n="sideProject01RoleText1">I independently contributed to the overall product development and implementation process, covering product concept development, user-oriented analysis, product feature design, solution validation, and promotional planning.</p>
+                        <p data-i18n="sideProject01RoleText2">I also used AI tools to support content analysis and the creation of promotional materials, including promotional videos, posters, and original music, while contributing to the development of both a mobile application and a desktop platform.</p>
+                    </article>
+                </section>
+
+                <section class="side-project-detail-section">
+                    <div class="side-project-section-heading">
+                        <span>03</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectResultTitle">Result</h3>
+                        </div>
+                    </div>
+                    <article class="side-project-result-card">
+                        <p class="side-project-result-label" data-i18n="sideProject01ResultTitle">AI-driven End-to-End Product</p>
+                        <p data-i18n="sideProject01ResultText">Developed an end-to-end product solution integrating AI-assisted product development, user analysis, content creation, and multi-platform implementation.</p>
+                        <p class="side-project-result-award" data-i18n="sideProject01ResultAward">The project received 1st place in the professional evaluation.</p>
+                        <div class="side-project-detail-tags side-project-result-tags">
+                            <span data-i18n="sideProject01Tag1">AI Product</span>
+                            <span data-i18n="sideProjectResultTag2">End-to-End Development</span>
+                            <span data-i18n="sideProject01Tag3">AI-assisted Creation</span>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="side-project-detail-section side-project-learning-section">
+                    <div class="side-project-section-heading">
+                        <span>04</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectLearningTitle">What I've Learned</h3>
+                        </div>
+                    </div>
+                    <div class="side-project-learning-grid">
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProjectLearnedLabel">What I've learned</p>
+                            <p data-i18n="sideProject01LearnedText">I learned that building a product with AI requires more than using AI tools for content generation. User needs, product positioning, data analysis, and iterative validation are equally important in turning an idea into a usable product.</p>
+                        </article>
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProjectSurprisedLabel">What surprised me</p>
+                            <p data-i18n="sideProject01SurprisedText">I was surprised by how AI could support multiple stages of the product lifecycle, from content creation and product design to promotion, making it possible to prototype and iterate much faster.</p>
+                        </article>
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProjectImproveLabel">What I would improve next</p>
+                            <p data-i18n="sideProject01ImproveText">I would further explore data-driven product experimentation and user feedback analysis, using more systematic evaluation methods to improve product decisions and measure the effectiveness of different promotion strategies.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <div class="side-project-detail-footer">
+                    <button class="side-project-detail-back-button" type="button" data-back-to-side-projects-01>
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToSideProjects">Back to Side Projects</span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             SIDE PROJECT 02 — TREASURE HUNTER
+             ========================= -->
+
+        <div class="side-project-detail-modal" id="sideProject02Modal" aria-hidden="true">
+
+            <div class="side-project-detail-backdrop" data-close-side-project-02></div>
+
+            <section
+                class="side-project-detail-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="sideProject02Title"
+            >
+
+                <button class="side-project-detail-close" type="button" aria-label="Close project" data-close-side-project-02>×</button>
+
+                <button class="side-project-detail-back-button" type="button" data-back-to-side-projects-02>
+                    <span aria-hidden="true">←</span>
+                    <span data-i18n="backToSideProjects">Back to Side Projects</span>
+                </button>
+
+                <header class="side-project-detail-header">
+                    <p class="side-project-detail-eyebrow" data-i18n="sideProjectsPageEyebrow">SIDE PROJECTS</p>
+                    <h2 id="sideProject02Title" data-i18n="sideProject02Title">Treasure Hunter</h2>
+                    <p class="side-project-detail-subtitle" data-i18n="sideProject02Subtitle">Independent Game Development</p>
+                    <div class="side-project-detail-tags">
+                        <span data-i18n="sideProject02Tag1">Python</span>
+                        <span data-i18n="sideProject02Tag2">Pygame</span>
+                        <span data-i18n="sideProject02Tag3">Game Development</span>
+                    </div>
+                </header>
+
+                <section class="side-project-detail-section">
+                    <div class="side-project-section-heading">
+                        <span>01</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectOverviewTitle">Project Overview</h3>
+                        </div>
+                    </div>
+                    <div class="side-project-copy">
+                        <p data-i18n="sideProject02Overview1">Treasure Hunter is an independently developed single-player game built with Python and Pygame.</p>
+                        <p data-i18n="sideProject02Overview2">The project was developed as a complete game development exercise, covering core gameplay logic and implementation from concept to a playable executable.</p>
+                    </div>
+                </section>
+
+                <section class="side-project-detail-section">
+                    <div class="side-project-section-heading">
+                        <span>02</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectRoleTitle">My Role</h3>
+                        </div>
+                    </div>
+                    <article class="side-project-role-card">
+                        <h4 data-i18n="sideProject02Role">Independent Game Developer</h4>
+                        <p data-i18n="sideProject02RoleText1">I independently handled the full development process, including gameplay logic, player movement, treasure collection, collision detection, and overall game implementation.</p>
+                        <p data-i18n="sideProject02RoleText2">The project allowed me to practice programming logic, interactive system design, debugging, and the development of a complete playable application.</p>
+                    </article>
+                </section>
+
+                <section class="side-project-detail-section">
+                    <div class="side-project-section-heading">
+                        <span>03</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectResultTitle">Result</h3>
+                        </div>
+                    </div>
+                    <article class="side-project-result-card">
+                        <p class="side-project-result-label" data-i18n="sideProject02ResultTitle">Playable Treasure Hunter Game</p>
+                        <p data-i18n="sideProject02ResultText">Delivered a playable single-player Treasure Hunter game with core gameplay mechanics implemented in Python and Pygame, including player movement, treasure collection, and collision detection.</p>
+                        <div class="side-project-detail-tags side-project-result-tags">
+                            <span data-i18n="sideProject02Tag1">Python</span>
+                            <span data-i18n="sideProject02Tag2">Pygame</span>
+                            <span data-i18n="sideProject02Tag3">Game Development</span>
+                        </div>
+                    </article>
+
+                    <div class="side-project-links">
+                        <a href="https://youtu.be/L0NuB80Hvjc/" target="_blank" rel="noopener noreferrer" data-i18n="sideProject02YoutubeLink">YouTube — Project Walkthrough</a>
+                        <a href="https://github.com/graceyang0301-bit/CDS524-Assignment-1-Treasure-Hunter" target="_blank" rel="noopener noreferrer" data-i18n="sideProject02GithubLink">GitHub — Treasure Hunter</a>
+                    </div>
+                </section>
+
+                <section class="side-project-detail-section side-project-learning-section">
+                    <div class="side-project-section-heading">
+                        <span>04</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectLearningTitle">What I've Learned</h3>
+                        </div>
+                    </div>
+                    <div class="side-project-learning-grid">
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProjectLearnedLabel">What I've learned</p>
+                            <p data-i18n="sideProject02LearnedText">I learned how important it is to break a game into smaller interactive systems, such as movement, collision detection, and item collection, and then integrate them into a complete playable experience.</p>
+                        </article>
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProjectSurprisedLabel">What surprised me</p>
+                            <p data-i18n="sideProject02SurprisedText">I was surprised by how many small interactions need to work together to make a simple game feel complete. Debugging these interactions also helped me better understand how programming logic translates into user experience.</p>
+                        </article>
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProjectImproveLabel">What I would improve next</p>
+                            <p data-i18n="sideProject02ImproveText">I would improve the game by adding more levels, richer gameplay mechanics, and a more polished user interface, while continuing to explore game development with Python and other interactive technologies.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <div class="side-project-detail-footer">
+                    <button class="side-project-detail-back-button" type="button" data-back-to-side-projects-02>
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToSideProjects">Back to Side Projects</span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             SIDE PROJECT 03 — INDEPENDENT PRODUCT & AI ADVERTISING CREATION
+             ========================= -->
+
+        <div class="side-project-detail-modal" id="sideProject03Modal" aria-hidden="true">
+
+            <div class="side-project-detail-backdrop" data-close-side-project-03></div>
+
+            <section
+                class="side-project-detail-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="sideProject03Title"
+            >
+
+                <button class="side-project-detail-close" type="button" aria-label="Close project" data-close-side-project-03>×</button>
+
+                <button class="side-project-detail-back-button" type="button" data-back-to-side-projects-03>
+                    <span aria-hidden="true">←</span>
+                    <span data-i18n="backToSideProjects">Back to Side Projects</span>
+                </button>
+
+                <header class="side-project-detail-header">
+                    <p class="side-project-detail-eyebrow" data-i18n="sideProjectsPageEyebrow">SIDE PROJECTS</p>
+                    <h2 id="sideProject03Title" data-i18n="sideProject03Title">Independent Product &amp; AI Advertising Creation</h2>
+                    <p class="side-project-detail-subtitle" data-i18n="sideProject03Subtitle">AI Product · Product Design · AI-assisted Creation · Advertising</p>
+                    <div class="side-project-detail-tags">
+                        <span data-i18n="sideProject03Tag1">AI Product</span>
+                        <span data-i18n="sideProject03Tag2">Product Design</span>
+                        <span data-i18n="sideProject03Tag3">AI-assisted Creation</span>
+                        <span data-i18n="sideProject03Tag4">Advertising</span>
+                    </div>
+                </header>
+
+                <section class="side-project-detail-section">
+                    <div class="side-project-section-heading">
+                        <span>01</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectOverviewTitle">Project Overview</h3>
+                        </div>
+                    </div>
+                    <div class="side-project-copy">
+                        <p data-i18n="sideProject03Overview">This project is an independently initiated product development and creative practice centered around an original product concept. It covers three core areas: product visual design, product concept development, and promotional advertising creation.</p>
+                        <p data-i18n="sideProject03Overview2">The project aims to develop the product from 0 to 1 by connecting product positioning, visual design, and marketing communication into one coherent workflow. The final outcome is a complete product concept with clear positioning, a consistent visual identity, and strong potential for market communication.</p>
+                    </div>
+                </section>
+
+                <section class="side-project-detail-section">
+                    <div class="side-project-section-heading">
+                        <span>02</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectRoleTitle">My Role</h3>
+                        </div>
+                    </div>
+                    <article class="side-project-role-card">
+                        <h4 data-i18n="sideProject03Role">Independent Project Lead</h4>
+                        <p data-i18n="sideProject03RoleIntro">Independent Project Lead, responsible for the planning and execution of the entire project.</p>
+                        <p data-i18n="sideProject03Role1">Led product positioning and user research, identifying the core product concept, differentiated value proposition, and overall product strategy.</p>
+                        <p data-i18n="sideProject03Role2">Designed the complete set of product visuals, including hero product images, detailed product breakdowns, and contextual application visuals, while maintaining the overall visual quality and style.</p>
+                        <p data-i18n="sideProject03Role3">Developed the creative concept and visual execution for product promotional advertising, creating advertising materials adapted to different communication channels.</p>
+                        <p data-i18n="sideProject03Role4">Managed overall visual and conceptual consistency throughout the project, ensuring alignment across product positioning, product design, and promotional communication.</p>
+                    </article>
+                </section>
+
+                <section class="side-project-detail-section">
+                    <div class="side-project-section-heading">
+                        <span>03</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectResultTitle">Result</h3>
+                        </div>
+                    </div>
+                    <article class="side-project-result-card">
+                        <div class="side-project-copy">
+                            <p><strong data-i18n="sideProject03Result1Label">Visual Design Deliverables:</strong> <span data-i18n="sideProject03Result1Text">Developed a standardized product visual library covering multiple presentation perspectives, establishing a consistent visual system that can be adapted for e-commerce product pages, brand guidelines, offline displays, and other scenarios.</span></p>
+                            <p><strong data-i18n="sideProject03Result2Label">Product Strategy Deliverables:</strong> <span data-i18n="sideProject03Result2Text">Developed a complete product concept framework centered around the dual value proposition of functional value and emotional resonance, establishing differentiated market positioning and defining the target audience.</span></p>
+                            <p><strong data-i18n="sideProject03Result3Label">Promotional Materials:</strong> <span data-i18n="sideProject03Result3Text">Created multiple types of product advertising materials, including key visual posters, feed advertisements, and contextual promotional visuals, adapted to the content characteristics of social media and digital platforms.</span></p>
+                            <p><strong data-i18n="sideProject03Result4Label">Methodology:</strong> <span data-i18n="sideProject03Result4Text">Developed a reusable product development framework of “Strategy Anchoring → Design Execution → Communication Amplification”, which can be applied to similar product design projects.</span></p>
+                        </div>
+
+                        <div class="project-video-link side-project-links">
+                            <a
+                                href="https://www.dropbox.com/scl/fi/5kx4u97zqxm5a6gstq9f6/5528174_Yang_assignment-2-video.mp4?rlkey=j71ydf18f62pmokxu0op7zuzs&st=5wzszh5l&dl=0"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-resource-link"
+                                data-i18n="sideProject03VideoLink"
+                            >▶ Watch Project Video</a>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="side-project-detail-section side-project-learning-section">
+                    <div class="side-project-section-heading">
+                        <span>04</span>
+                        <div>
+                            <p data-i18n="sectionLabel">PROJECT</p>
+                            <h3 data-i18n="sideProjectLearningTitle">What I've Learned</h3>
+                        </div>
+                    </div>
+                    <div class="side-project-learning-grid">
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProjectLearnedLabel">What I've learned</p>
+                            <p data-i18n="sideProject03LearnedText1">Developed an end-to-end product mindset: I moved beyond the idea that product design is limited to visual execution and developed a deeper understanding of how strategic positioning, design execution, and marketing communication are interconnected to form a complete product value loop.</p>
+                        </article>
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProject03LearnedText2Label">Visual Consistency</p>
+                            <p data-i18n="sideProject03LearnedText2">Learned how to build visual consistency: From the product's materials and color palette to the storytelling and visual style of promotional advertising, I learned how a consistent design language can create a coherent and memorable product identity.</p>
+                        </article>
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProject03LearnedText3Label">User-Centered Design</p>
+                            <p data-i18n="sideProject03LearnedText3">Strengthened user-centered design thinking: Whether developing the product concept or creating advertising ideas, I learned to anchor decisions in the real usage scenarios and emotional needs of the target audience rather than focusing solely on visual aesthetics.</p>
+                        </article>
+                        <article class="side-project-learning-card">
+                            <p class="side-project-learning-label" data-i18n="sideProject03LearnedText4Label">Independent Project Management</p>
+                            <p data-i18n="sideProject03LearnedText4">Improved independent project management skills: By leading the project from 0 to 1, I learned how to structure the project timeline, balance strategic thinking with practical execution, and ensure complete delivery according to the original objectives.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <div class="side-project-detail-footer">
+                    <button class="side-project-detail-back-button" type="button" data-back-to-side-projects-03>
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToSideProjects">Back to Side Projects</span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =========================
+             ABOUT ME PAGE
+             ========================= -->
+
+        <div class="about-me-modal" id="aboutMeModal" aria-hidden="true">
+
+            <div class="about-me-modal-backdrop" data-close-about-me></div>
+
+            <section
+                class="about-me-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="aboutMePageTitle"
+            >
+
+                <button
+                    class="about-me-close"
+                    type="button"
+                    aria-label="Close About Me"
+                    data-close-about-me
+                >
+                    ×
+                </button>
+
+                <header class="about-me-header">
+                    <p class="about-me-eyebrow" data-i18n="aboutMePageEyebrow">ABOUT ME</p>
+                    <h2 id="aboutMePageTitle" data-i18n="aboutMePageTitle">ABOUT ME</h2>
+                    <p data-i18n="aboutMePageSubtitle">AI · Business Analytics · Product</p>
+                </header>
+
+                <div class="about-me-content">
+
+                    <section class="about-me-profile about-me-section-card">
+                        <div class="about-me-profile-heading" data-i18n="aboutMeProfileTitle">PERSONAL PROFILE</div>
+                        <div class="about-me-profile-top">
+                            <div class="about-me-photo-slot">
+                                <img
+                                    src="assets/grace-yang-profile.jpg"
+                                    alt="Grace Yang profile photo"
+                                >
+                            </div>
+
+                            <div class="about-me-profile-intro">
+                                <p class="about-me-name-cn" data-i18n="aboutMeNameCn">杨鑫康</p>
+                                <h3 data-i18n="aboutMeNameEn">Grace Yang</h3>
+                                <p class="about-me-degree" data-i18n="aboutMeDegree">MSc Artificial Intelligence &amp; Business Analytics</p>
+                            </div>
+                        </div>
+
+                        <div class="about-me-basic-grid">
+                            <div class="about-me-info-item">
+                                <span class="about-me-info-label" data-i18n="aboutMeNameLabel">Name</span>
+                                <strong>Yang Xinkang</strong>
+                            </div>
+                            <div class="about-me-info-item">
+                                <span class="about-me-info-label" data-i18n="aboutMeGenderLabel">Gender</span>
+                                <strong data-i18n="aboutMeGender">Female</strong>
+                            </div>
+                            <div class="about-me-info-item">
+                                <span class="about-me-info-label" data-i18n="aboutMeEmailLabel">Email</span>
+                                <strong>graceyang0301@gmail.com</strong>
+                            </div>
+                            <div class="about-me-info-item">
+                                <span class="about-me-info-label" data-i18n="aboutMePhoneLabel">Phone</span>
+                                <strong>+86 130 8053 152</strong>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="about-me-section">
+                        <div class="about-me-section-heading">
+                            <span>01</span>
+                            <h3 data-i18n="aboutMeEducationTitle">EDUCATION</h3>
+                        </div>
+
+                        <div class="about-me-card-grid about-me-education-grid">
+                            <article class="about-me-card about-me-education-card">
+                                <div class="about-me-card-topline">
+                                    <span class="about-me-card-index">01</span>
+                                    <span class="about-me-date">2025.09 — 2026.11</span>
+                                </div>
+                                <h4>Lingnan University</h4>
+                                <p class="about-me-card-degree">MSc — Artificial Intelligence &amp; Business Analytics</p>
+                                <p class="about-me-card-location">Hong Kong</p>
+                                <div class="about-me-subheading" data-i18n="aboutMeCoreCourses">Core Courses</div>
+                                <div class="about-me-tags">
+                                    <span>Machine Learning</span>
+                                    <span>Deep Learning</span>
+                                    <span>Natural Language Processing</span>
+                                    <span>Business Data Mining</span>
+                                    <span>Generative AI</span>
+                                    <span>Large Language Models</span>
+                                    <span>Computer Vision</span>
+                                </div>
+                            </article>
+
+                            <article class="about-me-card about-me-education-card">
+                                <div class="about-me-card-topline">
+                                    <span class="about-me-card-index">02</span>
+                                    <span class="about-me-date">2021.09 — 2025.07</span>
+                                </div>
+                                <h4>Hunan Agricultural University Dongfang Institute of Technology</h4>
+                                <p class="about-me-card-degree">BBA — E-commerce</p>
+                                <p class="about-me-card-location">Changsha</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="about-me-section">
+                        <div class="about-me-section-heading">
+                            <span>02</span>
+                            <h3 data-i18n="aboutMeAwardsTitle">AWARDS &amp; CERTIFICATIONS</h3>
+                        </div>
+
+                        <div class="about-me-card-grid about-me-awards-grid">
+                            <article class="about-me-card about-me-award-card">
+                                <span class="about-me-card-label" data-i18n="aboutMeHonorLabel">Honor</span>
+                                <h4 data-i18n="aboutMeAward01">Outstanding Student</h4>
+                                <p>2023 · <span data-i18n="aboutMeCollegeLevel">College-level</span></p>
+                            </article>
+                            <article class="about-me-card about-me-award-card">
+                                <span class="about-me-card-label" data-i18n="aboutMeHonorLabel">Honor</span>
+                                <h4 data-i18n="aboutMeAward02">Outstanding Youth League Cadre</h4>
+                                <p>2021 · <span data-i18n="aboutMeCollegeLevel">College-level</span></p>
+                            </article>
+                            <article class="about-me-card about-me-award-card">
+                                <span class="about-me-card-label" data-i18n="aboutMeCertificationLabel">Certification</span>
+                                <h4>FCA — FineBI Junior BI Engineer</h4>
+                                <p>FanRuan</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="about-me-section">
+                        <div class="about-me-section-heading">
+                            <span>03</span>
+                            <h3 data-i18n="aboutMeSkillsTitle">SKILLS</h3>
+                        </div>
+
+                        <div class="about-me-skills-grid">
+                            <article class="about-me-card about-me-skill-card">
+                                <h4 data-i18n="aboutMeProgramming">PROGRAMMING</h4>
+                                <div class="about-me-tags">
+                                    <span>Python</span><span>Java</span><span>R</span><span>SQL</span>
+                                </div>
+                            </article>
+                            <article class="about-me-card about-me-skill-card">
+                                <h4 data-i18n="aboutMeDataAnalytics">DATA &amp; ANALYTICS</h4>
+                                <div class="about-me-tags">
+                                    <span>Excel</span><span>Power BI</span><span>FineBI</span><span>Matplotlib</span><span>Seaborn</span>
+                                </div>
+                            </article>
+                            <article class="about-me-card about-me-skill-card">
+                                <h4 data-i18n="aboutMeAiTools">AI &amp; DEVELOPMENT TOOLS</h4>
+                                <div class="about-me-tags">
+                                    <span>Claude Code</span><span>Codex</span><span>Cursor</span>
+                                </div>
+                            </article>
+                            <article class="about-me-card about-me-skill-card">
+                                <h4 data-i18n="aboutMeCreativeAi">CREATIVE AI</h4>
+                                <div class="about-me-tags">
+                                    <span>Midjourney</span>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="about-me-section">
+                        <div class="about-me-section-heading">
+                            <span>04</span>
+                            <h3 data-i18n="aboutMeLanguagesTitle">LANGUAGES</h3>
+                        </div>
+
+                        <div class="about-me-language-grid">
+                            <article class="about-me-card about-me-language-card">
+                                <h4>Mandarin</h4>
+                                <p data-i18n="aboutMeMandarin">Native</p>
+                            </article>
+                            <article class="about-me-card about-me-language-card">
+                                <h4>English</h4>
+                                <p>IELTS 6.5 · CET-4 · CET-6</p>
+                            </article>
+                            <article class="about-me-card about-me-language-card">
+                                <h4>Cantonese</h4>
+                                <p data-i18n="aboutMeCantonese">Beginner</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="about-me-section about-me-statement-section">
+                        <div class="about-me-section-heading">
+                            <span>05</span>
+                            <h3 data-i18n="aboutMeStatementTitle">PERSONAL STATEMENT</h3>
+                        </div>
+                        <article class="about-me-statement-card">
+                            <p data-i18n="aboutMeStatement">“I am a curious and hands-on learner with an interdisciplinary background in e-commerce, business, AI, and data analytics.\n\nI enjoy exploring how technology can solve practical problems and improve products, user experiences, and business processes.\n\nThrough academic projects, internships, and independent projects, I have developed experience in data analysis, AI applications, product operations, and digital content creation.\n\nI am also comfortable learning new tools and technologies independently, and I enjoy turning ideas into practical solutions through experimentation and hands-on development.”</p>
+                        </article>
+                    </section>
+
+                </div>
+
+                <footer class="about-me-footer">
+                    <button class="about-me-back-button" type="button" data-close-about-me data-i18n="backToIsland">
+                        Back to Island
+                    </button>
+                </footer>
+
+            </section>
+        </div>
+
+
+        <!-- =========================
+             EXPERIENCE PAGE
+             ========================= -->
+
+        <div class="experience-modal" id="experienceModal" aria-hidden="true">
+
+            <div class="experience-modal-backdrop" data-close-experience></div>
+
+            <section
+                class="experience-modal-panel"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="experiencePageTitle"
+            >
+
+                <button
+                    class="experience-modal-close"
+                    type="button"
+                    aria-label="Close Experience"
+                    data-close-experience
+                >
+                    ×
+                </button>
+
+                <div class="experience-page-header">
+                    <p class="experience-page-eyebrow" data-i18n="experiencePageEyebrow">
+                        EXPERIENCE
+                    </p>
+
+                    <h2 id="experiencePageTitle" data-i18n="experiencePageTitle">
+                        My Experience
+                    </h2>
+
+                    <p data-i18n="experiencePageSubtitle">
+                        Internships · Product · E-commerce
+                    </p>
+                </div>
+
+                <div class="experience-timeline">
+
+                    <article class="experience-card">
+                        <div class="experience-card-year">2025</div>
+                        <div class="experience-card-content">
+                            <div class="experience-card-meta">
+                                <span class="experience-card-date" data-i18n="experience01Date">Apr 2025 – Jun 2025</span>
+                            </div>
+                            <h3 data-i18n="experience01Company">Dongfang Pump Industry Co., Ltd.</h3>
+                            <p class="experience-card-role" data-i18n="experience01Role">Product Intern</p>
+                            <p class="experience-card-overview" data-i18n="experience01Overview">Worked as a Product Intern, supporting e-commerce product presentation, customer development, and sales-related activities.</p>
+                            <div class="experience-card-section">
+                                <h4 data-i18n="experienceWorkedOn">What I Worked On</h4>
+                                <ul>
+                                    <li data-i18n="experience01Work1">Designed visual content and promotional materials for pump products on e-commerce platforms.</li>
+                                    <li data-i18n="experience01Work2">Photographed and edited product images and created short-form promotional videos.</li>
+                                    <li data-i18n="experience01Work3">Developed online customer relationships and supported sales conversion.</li>
+                                    <li data-i18n="experience01Work4">Maintained customer relationships to encourage repeat purchases.</li>
+                                    <li data-i18n="experience01Work5">Coordinated with offline teams to support order fulfillment.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="experience-card">
+                        <div class="experience-card-year">2024</div>
+                        <div class="experience-card-content">
+                            <div class="experience-card-meta">
+                                <span class="experience-card-date" data-i18n="experience02Date">Jul 2024 – Sep 2024</span>
+                            </div>
+                            <h3 data-i18n="experience02Company">怡口派零食公司</h3>
+                            <p class="experience-card-role" data-i18n="experience02Role">Product Operations</p>
+                            <p class="experience-card-overview" data-i18n="experience02Overview">Worked in product operations, supporting e-commerce store management, marketing activities, and content creation.</p>
+                            <div class="experience-card-section">
+                                <h4 data-i18n="experienceWorkedOn">What I Worked On</h4>
+                                <ul>
+                                    <li data-i18n="experience02Work1">Managed product listings and optimized store pages on e-commerce platforms.</li>
+                                    <li data-i18n="experience02Work2">Developed and executed promotional campaigns.</li>
+                                    <li data-i18n="experience02Work3">Produced and published short-form videos to increase product exposure and user engagement.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="experience-card">
+                        <div class="experience-card-year">2022</div>
+                        <div class="experience-card-content">
+                            <div class="experience-card-meta">
+                                <span class="experience-card-date" data-i18n="experience03Date">Apr 2022 – Jun 2022</span>
+                            </div>
+                            <h3 data-i18n="experience03Company">E-commerce Internship</h3>
+                            <p class="experience-card-role" data-i18n="experience03Role">E-commerce Operations</p>
+                            <p class="experience-card-overview" data-i18n="experience03Overview">Managed an online Taobao store, gaining hands-on experience in e-commerce operations, product presentation, market analysis, and promotion.</p>
+                            <div class="experience-card-section">
+                                <h4 data-i18n="experienceWorkedOn">What I Worked On</h4>
+                                <ul>
+                                    <li data-i18n="experience03Work1">Listed and managed products on the Taobao platform.</li>
+                                    <li data-i18n="experience03Work2">Photographed products and created promotional videos.</li>
+                                    <li data-i18n="experience03Work3">Designed product detail pages to improve customer appeal.</li>
+                                    <li data-i18n="experience03Work4">Analyzed market trends and product demand.</li>
+                                    <li data-i18n="experience03Work5">Identified product improvement opportunities and supported promotional activities.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <section class="experience-highlights">
+                    <p class="experience-highlights-eyebrow" data-i18n="experienceHighlightsTitle">
+                        EXPERIENCE HIGHLIGHTS
+                    </p>
+                    <div class="experience-highlight-tags">
+                        <span data-i18n="experienceHighlight1">E-commerce</span>
+                        <span data-i18n="experienceHighlight2">Product Operations</span>
+                        <span data-i18n="experienceHighlight3">Customer &amp; Market</span>
+                    </div>
+                    <p class="experience-highlights-text" data-i18n="experienceHighlightsText">
+                        From e-commerce operations to AI and business analytics, my experience has shaped a practical understanding of products, users, and data.
+                    </p>
+                </section>
+
+                <div class="experience-page-footer">
+                    <button class="experience-back-button" type="button" data-close-experience>
+                        <span aria-hidden="true">←</span>
+                        <span data-i18n="backToCareerIsland">Back to Career Island</span>
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         Footer
+         ========================= -->
+
+    <footer>
+
+        <p>
+            © <span id="year"></span>
+
+            <span data-i18n="footerName">
+                Your Name · Career Island
+            </span>
+        </p>
+
+    </footer>
+
+
+    <!-- Existing JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
